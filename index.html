@@ -1,10 +1,1284 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>poop</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="BS-free story development for film and television."
+  >
+
+  <title>Story Jerk</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --yellow: #FBDB5B;
+      --black: #1A1A1A;
+      --white: #FFFFFF;
+      --grey: #D8D8D8;
+      --nav-height: 76px;
+      --max-width: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-height);
+    }
+
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--yellow);
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    blockquote {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Archivo Black", Impact, sans-serif;
+      line-height: 1;
+      letter-spacing: -0.035em;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      margin-bottom: 2rem;
+      font-family: "Archivo Black", Impact, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      z-index: 2000;
+      padding: 0.8rem 1rem;
+      color: var(--yellow);
+      background: var(--black);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* FIXED NAVIGATION */
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1000;
+      height: var(--nav-height);
+      color: var(--yellow);
+      background: var(--black);
+      border-bottom: 3px solid var(--yellow);
+    }
+
+    .nav-wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .site-nav {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .site-nav a {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.5rem;
+      color: var(--yellow);
+      font-family: "Archivo Black", Impact, sans-serif;
+      font-size: clamp(0.48rem, 1.2vw, 0.78rem);
+      letter-spacing: 0.08em;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+      border-right: 1px solid rgba(251, 219, 91, 0.35);
+    }
+
+    .site-nav a:last-child {
+      border-right: 0;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus {
+      color: var(--black);
+      background: var(--yellow);
+    }
+
+    /* BUTTONS */
+
+    .button {
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.7rem;
+      color: var(--yellow);
+      background: var(--black);
+      border: 3px solid var(--black);
+      border-radius: 0;
+      font-family: "Archivo Black", Impact, sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition:
+        color 150ms ease,
+        background 150ms ease,
+        transform 150ms ease;
+    }
+
+    .button:hover,
+    .button:focus {
+      color: var(--black);
+      background: var(--yellow);
+      transform: translateY(-3px);
+    }
+
+    .text-link {
+      display: inline-block;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 3px solid currentColor;
+    }
+
+    /* SECTION 1: HOME */
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      overflow: hidden;
+      color: var(--yellow);
+      background:
+        url("assets/hero-placeholder.svg")
+        center center / cover no-repeat;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 26, 26, 0.66);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding:
+        calc(var(--nav-height) + 40px)
+        12px
+        120px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero h1 {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      font-size: clamp(3.2rem, 11vw, 9rem);
+      line-height: 0.9;
+      letter-spacing: -0.045em;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero-subheading {
+      width: 100%;
+      max-width: 100%;
+      margin: 1.5rem 0 0;
+      padding: 0;
+      font-family: "Archivo Black", Impact, sans-serif;
+      font-size: clamp(0.48rem, 2.55vw, 1.75rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero-contact {
+      position: absolute;
+      right: 0;
+      bottom: 42px;
+      left: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero .button {
+      color: var(--black);
+      background: var(--yellow);
+      border-color: var(--yellow);
+    }
+
+    .hero .button:hover,
+    .hero .button:focus {
+      color: var(--yellow);
+      background: var(--black);
+    }
+
+    /* GENERAL PAGE SECTIONS */
+
+    .page-section {
+      min-height: calc(100svh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      padding: 110px 0;
+      border-bottom: 4px solid var(--black);
+    }
+
+    #services {
+      color: var(--black);
+      background: var(--yellow);
+    }
+
+    #methodology {
+      color: var(--yellow);
+      background: var(--black);
+    }
+
+    #testimonies {
+      color: var(--black);
+      background: var(--yellow);
+    }
+
+    #about {
+      color: var(--yellow);
+      background: var(--black);
+      border-bottom: 0;
+    }
+
+    /* SECTION 2: SERVICES */
+
+    .service-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .service-card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      color: var(--yellow);
+      background: var(--black);
+      border: 3px solid var(--black);
+    }
+
+    .service-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-bottom: 3px solid var(--yellow);
+    }
+
+    .service-card-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem;
+    }
+
+    .service-number {
+      margin-bottom: 0.8rem;
+      font-family: "Archivo Black", Impact, sans-serif;
+      font-size: 0.75rem;
+    }
+
+    .service-card h3 {
+      font-size: clamp(1rem, 1.65vw, 1.4rem);
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+    }
+
+    .service-card .text-link {
+      margin-top: auto;
+      padding-top: 1rem;
+      font-size: 0.82rem;
+    }
+
+    /* SECTION 3: METHODOLOGY */
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .method-step {
+      padding: 1.6rem;
+      color: var(--black);
+      background: var(--yellow);
+      border: 3px solid var(--yellow);
+    }
+
+    .method-step span {
+      display: block;
+      margin-bottom: 2rem;
+      font-family: "Archivo Black", Impact, sans-serif;
+      font-size: 1rem;
+    }
+
+    .method-step p {
+      margin-bottom: 0;
+    }
+
+    /* SECTION 4: TESTIMONIAL CAROUSEL */
+
+    .testimonial-section-inner {
+      width: 100%;
+    }
+
+    .testimonial-carousel {
+      position: relative;
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .testimonial-track {
+      position: relative;
+      min-height: 430px;
+    }
+
+    .testimonial-card {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding: 2.5rem;
+      color: var(--yellow);
+      background: var(--black);
+      border: 4px solid var(--black);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(40px);
+      transition:
+        opacity 450ms ease,
+        transform 450ms ease,
+        visibility 450ms ease;
+    }
+
+    .testimonial-card.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+
+    .testimonial-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 4px solid var(--yellow);
+    }
+
+    .testimonial-name {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+    }
+
+    .testimonial-bio {
+      margin-bottom: 1.5rem;
+      color: var(--grey);
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .testimonial-quote {
+      margin: 0;
+      font-size: clamp(1.25rem, 2.4vw, 2rem);
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .testimonial-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .carousel-button {
+      width: 48px;
+      height: 48px;
+      color: var(--yellow);
+      background: var(--black);
+      border: 3px solid var(--black);
+      border-radius: 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .carousel-button:hover,
+    .carousel-button:focus {
+      color: var(--black);
+      background: var(--yellow);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .carousel-dot {
+      width: 14px;
+      height: 14px;
+      padding: 0;
+      background: transparent;
+      border: 3px solid var(--black);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      background: var(--black);
+    }
+
+    /* SECTION 5: ABOUT AND CONTACT */
+
+    .about-contact-wrapper {
+      display: grid;
+      gap: 90px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      border: 4px solid var(--yellow);
+    }
+
+    .about-copy p:not(.eyebrow) {
+      color: var(--grey);
+      font-size: 1.05rem;
+    }
+
+    .contact-divider {
+      width: 100%;
+      height: 4px;
+      background: var(--yellow);
+    }
+
+    .contact-area {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: start;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1.2rem;
+      padding: 2rem;
+      color: var(--black);
+      background: var(--yellow);
+      border: 4px solid var(--yellow);
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: 0.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.95rem;
+      color: var(--yellow);
+      background: var(--black);
+      border: 3px solid var(--black);
+      border-radius: 0;
+      font: inherit;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+    }
+
+    .contact-form .button {
+      color: var(--yellow);
+      background: var(--black);
+    }
+
+    .contact-form .button:hover,
+    .contact-form .button:focus {
+      color: var(--black);
+      background: var(--yellow);
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1000px) {
+      .service-grid,
+      .method-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* PHONE */
+
+    @media (max-width: 700px) {
+      :root {
+        --nav-height: 64px;
+      }
+
+      .container {
+        width: min(calc(100% - 26px), var(--max-width));
+      }
+
+      .site-nav a {
+        padding: 0 0.15rem;
+        font-size: clamp(0.43rem, 2vw, 0.56rem);
+        letter-spacing: 0;
+      }
+
+      .hero-content {
+        padding:
+          calc(var(--nav-height) + 30px)
+          8px
+          100px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 17vw, 5rem);
+      }
+
+      .hero-subheading {
+        font-size: clamp(0.46rem, 2.6vw, 0.8rem);
+      }
+
+      .hero-contact {
+        bottom: 30px;
+      }
+
+      .page-section {
+        min-height: auto;
+        padding: 85px 0;
+      }
+
+      .service-grid,
+      .method-grid,
+      .about-grid,
+      .contact-area {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-track {
+        min-height: 650px;
+      }
+
+      .testimonial-card {
+        grid-template-columns: 1fr;
+        align-content: start;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      .testimonial-photo {
+        width: 170px;
+      }
+
+      .about-contact-wrapper {
+        gap: 65px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .site-nav a {
+        font-size: 0.42rem;
+      }
+
+      .hero-subheading {
+        font-size: 0.45rem;
+      }
+
+      .testimonial-track {
+        min-height: 720px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>My Story Site Works</h1>
-  <p>This is my test homepage.</p>
+  <a class="skip-link" href="#main-content">
+    Skip to content
+  </a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#testimonies">Testimonies</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- SECTION 1: HOME -->
+
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1>Story Jerk</h1>
+
+        <p class="hero-subheading">
+          BS-free story development for film &amp; TV
+        </p>
+
+        <div class="hero-contact">
+          <a class="button" href="#contact">
+            Contact
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: SERVICES -->
+
+    <section class="page-section" id="services">
+      <div class="container">
+
+        <p class="eyebrow">Services</p>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <img
+              src="assets/drop-in-placeholder.svg"
+              alt="Placeholder for an online story consultation photograph"
+            >
+
+            <div class="service-card-content">
+              <p class="service-number">01</p>
+
+              <h3>Drop-in Story Session</h3>
+
+              <p>
+                A focused one-hour conversation about a script,
+                treatment, character, scene or project problem.
+              </p>
+
+              <a class="text-link" href="#contact">
+                Enquire →
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="assets/coaching-placeholder.svg"
+              alt="Placeholder for a long-term coaching photograph"
+            >
+
+            <div class="service-card-content">
+              <p class="service-number">02</p>
+
+              <h3>Draft Development Coaching</h3>
+
+              <p>
+                Structured support to reach a new draft,
+                treatment or pilot by an agreed deadline.
+              </p>
+
+              <a class="text-link" href="#contact">
+                Enquire →
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="assets/beginners-placeholder.svg"
+              alt="Placeholder for a beginner workshop photograph"
+            >
+
+            <div class="service-card-content">
+              <p class="service-number">03</p>
+
+              <h3>Story Foundations</h3>
+
+              <p>
+                Practical group workshops introducing character,
+                structure, scenes and visual storytelling.
+              </p>
+
+              <a class="text-link" href="#contact">
+                Enquire →
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="assets/live-scene-placeholder.svg"
+              alt="Placeholder for a live scene workshop photograph"
+            >
+
+            <div class="service-card-content">
+              <p class="service-number">04</p>
+
+              <h3>Story on Its Feet</h3>
+
+              <p>
+                Test scenes, character choices and dramatic ideas
+                through actors, readings and improvisation.
+              </p>
+
+              <a class="text-link" href="#contact">
+                Enquire →
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: METHODOLOGY -->
+
+    <section class="page-section" id="methodology">
+      <div class="container">
+
+        <p class="eyebrow">Methodology</p>
+
+        <div class="method-grid">
+
+          <div class="method-step">
+            <span>01</span>
+
+            <h3>Listen</h3>
+
+            <p>
+              Understand the project, the writer’s intention
+              and the current problem.
+            </p>
+          </div>
+
+          <div class="method-step">
+            <span>02</span>
+
+            <h3>Diagnose</h3>
+
+            <p>
+              Identify what is working, what is unclear
+              and what the story actually needs.
+            </p>
+          </div>
+
+          <div class="method-step">
+            <span>03</span>
+
+            <h3>Experiment</h3>
+
+            <p>
+              Test alternatives on the page, in conversation
+              or through live scene work.
+            </p>
+          </div>
+
+          <div class="method-step">
+            <span>04</span>
+
+            <h3>Move Forward</h3>
+
+            <p>
+              Finish with clear decisions, priorities
+              and practical next steps.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: TESTIMONIES -->
+
+    <section class="page-section" id="testimonies">
+      <div class="container testimonial-section-inner">
+
+        <p class="eyebrow">Testimonies</p>
+
+        <div
+          class="testimonial-carousel"
+          aria-label="Client testimonies"
+        >
+          <div class="testimonial-track" aria-live="polite">
+
+            <article class="testimonial-card active">
+              <img
+                class="testimonial-photo"
+                src="assets/portrait-placeholder.svg"
+                alt="Placeholder portrait for testimony one"
+              >
+
+              <div>
+                <h3 class="testimonial-name">Person One</h3>
+
+                <p class="testimonial-bio">
+                  Writer, director or relevant credits
+                </p>
+
+                <blockquote class="testimonial-quote">
+                  “Replace this with the first client testimony.”
+                </blockquote>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <img
+                class="testimonial-photo"
+                src="assets/portrait-placeholder.svg"
+                alt="Placeholder portrait for testimony two"
+              >
+
+              <div>
+                <h3 class="testimonial-name">Person Two</h3>
+
+                <p class="testimonial-bio">
+                  Company, production or relevant credits
+                </p>
+
+                <blockquote class="testimonial-quote">
+                  “Replace this with the second client testimony.”
+                </blockquote>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <img
+                class="testimonial-photo"
+                src="assets/portrait-placeholder.svg"
+                alt="Placeholder portrait for testimony three"
+              >
+
+              <div>
+                <h3 class="testimonial-name">Person Three</h3>
+
+                <p class="testimonial-bio">
+                  Writer, filmmaker or relevant credits
+                </p>
+
+                <blockquote class="testimonial-quote">
+                  “Replace this with the third client testimony.”
+                </blockquote>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <img
+                class="testimonial-photo"
+                src="assets/portrait-placeholder.svg"
+                alt="Placeholder portrait for testimony four"
+              >
+
+              <div>
+                <h3 class="testimonial-name">Person Four</h3>
+
+                <p class="testimonial-bio">
+                  Business, studio or relevant credits
+                </p>
+
+                <blockquote class="testimonial-quote">
+                  “Replace this with the fourth client testimony.”
+                </blockquote>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <img
+                class="testimonial-photo"
+                src="assets/portrait-placeholder.svg"
+                alt="Placeholder portrait for testimony five"
+              >
+
+              <div>
+                <h3 class="testimonial-name">Person Five</h3>
+
+                <p class="testimonial-bio">
+                  Writer, producer or relevant credits
+                </p>
+
+                <blockquote class="testimonial-quote">
+                  “Replace this with the fifth client testimony.”
+                </blockquote>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="testimonial-controls">
+            <button
+              class="carousel-button carousel-previous"
+              type="button"
+              aria-label="Previous testimony"
+            >
+              ←
+            </button>
+
+            <div
+              class="carousel-dots"
+              aria-label="Choose a testimony"
+            >
+              <button
+                class="carousel-dot active"
+                type="button"
+                aria-label="Show testimony 1"
+              ></button>
+
+              <button
+                class="carousel-dot"
+                type="button"
+                aria-label="Show testimony 2"
+              ></button>
+
+              <button
+                class="carousel-dot"
+                type="button"
+                aria-label="Show testimony 3"
+              ></button>
+
+              <button
+                class="carousel-dot"
+                type="button"
+                aria-label="Show testimony 4"
+              ></button>
+
+              <button
+                class="carousel-dot"
+                type="button"
+                aria-label="Show testimony 5"
+              ></button>
+            </div>
+
+            <button
+              class="carousel-button carousel-next"
+              type="button"
+              aria-label="Next testimony"
+            >
+              →
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: ABOUT AND CONTACT -->
+
+    <section class="page-section" id="about">
+      <div class="container about-contact-wrapper">
+
+        <div class="about-grid">
+
+          <div class="about-image">
+            <img
+              src="assets/portrait-placeholder.svg"
+              alt="Placeholder portrait of the story editor"
+            >
+          </div>
+
+          <div class="about-copy">
+            <p class="eyebrow">About</p>
+
+            <p>
+              Replace this section with your biography. Explain your
+              background in filmmaking, story editing, teaching,
+              performance and workshop practice.
+            </p>
+
+            <p>
+              You can also describe the kinds of writers and projects
+              you work with, and the values that shape your approach.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="contact-divider"></div>
+
+        <div class="contact-area" id="contact">
+
+          <div>
+            <p class="eyebrow">Contact</p>
+          </div>
+
+          <form
+            class="contact-form"
+            action="https://formsubmit.co/contact@storyjerk.net"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Story Jerk website enquiry"
+            >
+
+            <input
+              type="hidden"
+              name="_template"
+              value="table"
+            >
+
+            <label>
+              Name
+
+              <input
+                type="text"
+                name="Name"
+                required
+              >
+            </label>
+
+            <label>
+              Email
+
+              <input
+                type="email"
+                name="Email"
+                required
+              >
+            </label>
+
+            <label>
+              What are you working on?
+
+              <select name="Project type" required>
+                <option value="" selected disabled>
+                  Select an option
+                </option>
+
+                <option>Feature screenplay</option>
+                <option>Short film</option>
+                <option>TV pilot or series</option>
+                <option>Treatment or outline</option>
+                <option>Early-stage idea</option>
+                <option>Workshop enquiry</option>
+                <option>Other</option>
+              </select>
+            </label>
+
+            <label>
+              Which service are you interested in?
+
+              <select name="Service" required>
+                <option value="" selected disabled>
+                  Select an option
+                </option>
+
+                <option>Drop-in Story Session</option>
+                <option>Draft Development Coaching</option>
+                <option>Story Foundations Workshop</option>
+                <option>Story on Its Feet Workshop</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
+
+            <label>
+              Tell me about the project and what help you need
+
+              <textarea
+                name="Message"
+                rows="7"
+                required
+              ></textarea>
+            </label>
+
+            <button class="button" type="submit">
+              Send Message
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const testimonialCards =
+      document.querySelectorAll(".testimonial-card");
+
+    const testimonialDots =
+      document.querySelectorAll(".carousel-dot");
+
+    const previousButton =
+      document.querySelector(".carousel-previous");
+
+    const nextButton =
+      document.querySelector(".carousel-next");
+
+    const carousel =
+      document.querySelector(".testimonial-carousel");
+
+    let currentTestimony = 0;
+    let carouselTimer;
+
+    function showTestimony(index) {
+      testimonialCards.forEach((card) => {
+        card.classList.remove("active");
+      });
+
+      testimonialDots.forEach((dot) => {
+        dot.classList.remove("active");
+      });
+
+      currentTestimony =
+        (index + testimonialCards.length) %
+        testimonialCards.length;
+
+      testimonialCards[currentTestimony]
+        .classList.add("active");
+
+      testimonialDots[currentTestimony]
+        .classList.add("active");
+    }
+
+    function showNextTestimony() {
+      showTestimony(currentTestimony + 1);
+    }
+
+    function startCarousel() {
+      clearInterval(carouselTimer);
+
+      carouselTimer = setInterval(
+        showNextTestimony,
+        6000
+      );
+    }
+
+    previousButton.addEventListener("click", () => {
+      showTestimony(currentTestimony - 1);
+      startCarousel();
+    });
+
+    nextButton.addEventListener("click", () => {
+      showNextTestimony();
+      startCarousel();
+    });
+
+    testimonialDots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        showTestimony(index);
+        startCarousel();
+      });
+    });
+
+    carousel.addEventListener("mouseenter", () => {
+      clearInterval(carouselTimer);
+    });
+
+    carousel.addEventListener("mouseleave", () => {
+      startCarousel();
+    });
+
+    carousel.addEventListener("focusin", () => {
+      clearInterval(carouselTimer);
+    });
+
+    carousel.addEventListener("focusout", () => {
+      startCarousel();
+    });
+
+    startCarousel();
+  </script>
 </body>
 </html>

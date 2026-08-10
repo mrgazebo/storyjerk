@@ -244,9 +244,9 @@
     }
 
     .dictionary-definition {
+      padding: 1.6rem 1.8rem;
       color: var(--yellow);
       background: var(--black);
-      padding: 1.6rem 1.8rem;
       font-family: "Courier Prime", "Courier New", monospace;
       font-size: clamp(0.85rem, 1.4vw, 1.05rem);
       font-weight: 400;
@@ -350,45 +350,6 @@
       line-height: 1.35;
     }
 
-    .testimonial-controls {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .carousel-button {
-      width: 48px;
-      height: 48px;
-      color: var(--yellow);
-      background: var(--black);
-      border: 3px solid var(--black);
-      border-radius: 0;
-      font-size: 1.4rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .carousel-dots {
-      display: flex;
-      gap: 0.6rem;
-    }
-
-    .carousel-dot {
-      width: 14px;
-      height: 14px;
-      padding: 0;
-      background: transparent;
-      border: 3px solid var(--black);
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    .carousel-dot.active {
-      background: var(--black);
-    }
-
     /* SERVICES */
 
     #services {
@@ -421,41 +382,36 @@
 
     .service-card-link {
       height: 100%;
+      min-height: 230px;
       display: flex;
       flex-direction: column;
       color: inherit;
       text-decoration: none;
     }
 
-    .service-card img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      border-bottom: 3px solid var(--black);
-    }
-
     .service-card-content {
       flex: 1;
       display: flex;
       flex-direction: column;
-      padding: 1.25rem;
+      padding: 1.5rem;
     }
 
     .service-number {
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.4rem;
       font-family: "Archivo Black", Impact, sans-serif;
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
 
     .service-card h3 {
       margin-bottom: 1rem;
-      font-size: clamp(1rem, 1.5vw, 1.35rem);
+      font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+      line-height: 1.05;
       text-transform: uppercase;
     }
 
     .service-card p {
       margin-bottom: 0;
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       line-height: 1.5;
     }
 
@@ -506,6 +462,12 @@
       border-color: var(--yellow);
     }
 
+    .contact-form .button:hover,
+    .contact-form .button:focus {
+      color: var(--yellow);
+      background: var(--black);
+    }
+
     /* METHODOLOGY */
 
     #methodology {
@@ -539,8 +501,14 @@
       align-items: center;
     }
 
+    .about-image {
+      width: 100%;
+    }
+
     .about-image img {
       width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
       border: 4px solid var(--black);
     }
 
@@ -594,7 +562,7 @@
         right: 12px;
         bottom: 10px;
         left: 12px;
-        font-size: clamp(2.5rem, 12.5vw, 4rem);
+        font-size: clamp(2.4rem, 12vw, 4rem);
       }
 
       .hero-text {
@@ -626,8 +594,17 @@
       }
 
       .service-card {
+        width: 100%;
         max-width: 500px;
         margin-inline: auto;
+      }
+
+      .service-card-link {
+        min-height: 0;
+      }
+
+      .service-card-content {
+        padding: 1.4rem;
       }
 
       .contact-form {
@@ -859,12 +836,8 @@
               href="#contact"
               aria-label="Enquire about Drop-In Surgery"
             >
-              <img
-                src="assets/drop-in-story-surgery.jpg"
-                alt="One-to-one online story editing session"
-              >
-
               <div class="service-card-content">
+
                 <p class="service-number">
                   1
                 </p>
@@ -878,6 +851,7 @@
                   Just a simple one-to-one video call
                   whenever you need it.
                 </p>
+
               </div>
             </a>
           </article>
@@ -888,12 +862,8 @@
               href="#contact"
               aria-label="Enquire about Milestone Coaching"
             >
-              <img
-                src="assets/milestone-coaching.jpg"
-                alt="Writer working through project milestones with a coach"
-              >
-
               <div class="service-card-content">
+
                 <p class="service-number">
                   2
                 </p>
@@ -906,6 +876,7 @@
                   Bespoke long-term support and scheduling
                   to hit the next milestone of your project.
                 </p>
+
               </div>
             </a>
           </article>
@@ -916,12 +887,8 @@
               href="#contact"
               aria-label="Enquire about Script Engineering"
             >
-              <img
-                src="assets/script-engineering.jpg"
-                alt="Detailed script consultation and coverage"
-              >
-
               <div class="service-card-content">
+
                 <p class="service-number">
                   3
                 </p>
@@ -935,6 +902,7 @@
                   feedback to help you tell your story the way
                   you want to tell it.
                 </p>
+
               </div>
             </a>
           </article>
@@ -945,12 +913,8 @@
               href="#contact"
               aria-label="Enquire about Play"
             >
-              <img
-                src="assets/play-workshop.jpg"
-                alt="Guided improvisation workshop with performers"
-              >
-
               <div class="service-card-content">
+
                 <p class="service-number">
                   4
                 </p>
@@ -960,9 +924,10 @@
                 </h3>
 
                 <p>
-                  Guided improvisation workshops to explore ideas
-                  and discover inspiration.
+                  Guided improvisation workshops to explore
+                  ideas and discover inspiration.
                 </p>
+
               </div>
             </a>
           </article>
@@ -973,12 +938,8 @@
               href="#contact"
               aria-label="Enquire about Storytelling Foundations"
             >
-              <img
-                src="assets/storytelling-foundations.jpg"
-                alt="Private tuition in narrative design and visual storytelling"
-              >
-
               <div class="service-card-content">
+
                 <p class="service-number">
                   5
                 </p>
@@ -988,9 +949,10 @@
                 </h3>
 
                 <p>
-                  Private tuition for the principles of narrative
-                  design and visual storytelling.
+                  Private tuition for the principles
+                  of narrative design and visual storytelling.
                 </p>
+
               </div>
             </a>
           </article>
@@ -1233,7 +1195,7 @@
 
         <div class="about-image">
           <img
-            src="assets/about-portrait.jpg"
+            src="assets/about-portrait.png"
             alt="Portrait of the Story Jerk story editor"
           >
         </div>
@@ -1263,102 +1225,5 @@
     </section>
 
   </main>
-
-  <script>
-    const testimonialCards =
-      document.querySelectorAll(".testimonial-card");
-
-    const testimonialDots =
-      document.querySelectorAll(".carousel-dot");
-
-    const previousButton =
-      document.querySelector(".carousel-previous");
-
-    const nextButton =
-      document.querySelector(".carousel-next");
-
-    const carousel =
-      document.querySelector(".testimonial-carousel");
-
-    let currentTestimony = 0;
-    let carouselTimer;
-
-    function showTestimony(index) {
-      if (!testimonialCards.length) {
-        return;
-      }
-
-      testimonialCards.forEach((card) => {
-        card.classList.remove("active");
-      });
-
-      testimonialDots.forEach((dot) => {
-        dot.classList.remove("active");
-      });
-
-      currentTestimony =
-        (index + testimonialCards.length) %
-        testimonialCards.length;
-
-      testimonialCards[currentTestimony]
-        .classList.add("active");
-
-      if (testimonialDots[currentTestimony]) {
-        testimonialDots[currentTestimony]
-          .classList.add("active");
-      }
-    }
-
-    function showNextTestimony() {
-      showTestimony(currentTestimony + 1);
-    }
-
-    function startCarousel() {
-      if (!carousel) {
-        return;
-      }
-
-      clearInterval(carouselTimer);
-
-      carouselTimer = setInterval(
-        showNextTestimony,
-        6000
-      );
-    }
-
-    if (previousButton) {
-      previousButton.addEventListener(
-        "click",
-        () => {
-          showTestimony(currentTestimony - 1);
-          startCarousel();
-        }
-      );
-    }
-
-    if (nextButton) {
-      nextButton.addEventListener(
-        "click",
-        () => {
-          showNextTestimony();
-          startCarousel();
-        }
-      );
-    }
-
-    testimonialDots.forEach(
-      (dot, index) => {
-        dot.addEventListener(
-          "click",
-          () => {
-            showTestimony(index);
-            startCarousel();
-          }
-        );
-      }
-    );
-
-    startCarousel();
-  </script>
 </body>
 </html>

@@ -307,15 +307,16 @@
 
     .contact-area {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
+      grid-template-columns: 0.55fr 1.45fr;
       gap: 3rem;
       align-items: start;
     }
 
     .contact-form {
-      width: min(100%, 620px);
+      width: min(100%, 760px);
       display: grid;
-      gap: 0.85rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem 1rem;
       padding: 1.4rem;
       color: var(--yellow);
       background: var(--black);
@@ -323,6 +324,7 @@
     }
 
     .contact-form label {
+      min-width: 0;
       display: grid;
       gap: 0.35rem;
       font-size: 0.82rem;
@@ -333,6 +335,7 @@
     .contact-form input,
     .contact-form select {
       width: 100%;
+      min-width: 0;
       padding: 0.7rem;
       color: var(--black);
       background: var(--yellow);
@@ -343,6 +346,7 @@
     }
 
     .contact-form .button {
+      grid-column: 1 / -1;
       margin-top: 0.3rem;
       color: var(--black);
       background: var(--yellow);
@@ -378,7 +382,7 @@
     }
 
     .methodology-joke {
-      margin-top: 0.45rem;
+      margin-top: 3rem;
       color: var(--grey);
       font-size: 0.62rem;
       font-weight: 500;
@@ -504,8 +508,13 @@
 
       .contact-form {
         width: 100%;
+        grid-template-columns: 1fr;
         padding: 1rem;
         gap: 0.75rem;
+      }
+
+      .contact-form .button {
+        grid-column: auto;
       }
 
       .about-grid {
@@ -604,7 +613,10 @@
 
         <div class="service-grid">
 
+          <!-- SERVICE 1 -->
+
           <article class="service-card">
+
             <a
               class="service-card-link"
               href="#contact"
@@ -612,9 +624,13 @@
             >
               <div class="service-card-content">
 
-                <p class="service-number">1</p>
+                <p class="service-number">
+                  1
+                </p>
 
-                <h3>Drop-In Surgery</h3>
+                <h3>
+                  Drop-In Surgery
+                </h3>
 
                 <p>
                   No commitments. No long-term coaching.
@@ -624,9 +640,13 @@
 
               </div>
             </a>
+
           </article>
 
+          <!-- SERVICE 2 -->
+
           <article class="service-card">
+
             <a
               class="service-card-link"
               href="#contact"
@@ -634,9 +654,13 @@
             >
               <div class="service-card-content">
 
-                <p class="service-number">2</p>
+                <p class="service-number">
+                  2
+                </p>
 
-                <h3>Milestone Coaching</h3>
+                <h3>
+                  Milestone Coaching
+                </h3>
 
                 <p>
                   Bespoke long-term support and scheduling
@@ -645,9 +669,13 @@
 
               </div>
             </a>
+
           </article>
 
+          <!-- SERVICE 3 -->
+
           <article class="service-card">
+
             <a
               class="service-card-link"
               href="#contact"
@@ -655,9 +683,13 @@
             >
               <div class="service-card-content">
 
-                <p class="service-number">3</p>
+                <p class="service-number">
+                  3
+                </p>
 
-                <h3>Script Engineering</h3>
+                <h3>
+                  Script Engineering
+                </h3>
 
                 <p>
                   Script consultation and coverage for practical
@@ -667,30 +699,43 @@
 
               </div>
             </a>
+
           </article>
 
+          <!-- SERVICE 4 -->
+
           <article class="service-card">
+
             <a
               class="service-card-link"
               href="#contact"
-              aria-label="Enquire about Play"
+              aria-label="Enquire about Play and Create"
             >
               <div class="service-card-content">
 
-                <p class="service-number">4</p>
+                <p class="service-number">
+                  4
+                </p>
 
-                <h3>Play</h3>
+                <h3>
+                  Play &amp; Create
+                </h3>
 
                 <p>
-                  Guided improvisation workshops to explore
-                  ideas and discover inspiration.
+                  Road test your script and uncover story ideas
+                  through guided improvisation workshops,
+                  whether alone or with actors.
                 </p>
 
               </div>
             </a>
+
           </article>
 
+          <!-- SERVICE 5 -->
+
           <article class="service-card">
+
             <a
               class="service-card-link"
               href="#contact"
@@ -698,9 +743,13 @@
             >
               <div class="service-card-content">
 
-                <p class="service-number">5</p>
+                <p class="service-number">
+                  5
+                </p>
 
-                <h3>Storytelling Foundations</h3>
+                <h3>
+                  Storytelling Foundations
+                </h3>
 
                 <p>
                   Private tuition for the principles
@@ -709,6 +758,37 @@
 
               </div>
             </a>
+
+          </article>
+
+          <!-- SERVICE 6 -->
+
+          <article class="service-card">
+
+            <a
+              class="service-card-link"
+              href="#contact"
+              aria-label="Enquire about Fresh Eyes"
+            >
+              <div class="service-card-content">
+
+                <p class="service-number">
+                  6
+                </p>
+
+                <h3>
+                  Fresh Eyes
+                </h3>
+
+                <p>
+                  Get a refreshing outsider's insight on your
+                  current cut by combining my skills in
+                  screenwriting and video editing.
+                </p>
+
+              </div>
+            </a>
+
           </article>
 
         </div>
@@ -801,10 +881,21 @@
                 Select an option
               </option>
 
-              <option>Screenplay</option>
-              <option>Teleplay</option>
-              <option>Treatment</option>
-              <option>Short film</option>
+              <option>
+                Screenplay
+              </option>
+
+              <option>
+                Teleplay
+              </option>
+
+              <option>
+                Treatment
+              </option>
+
+              <option>
+                Short film
+              </option>
             </select>
           </label>
 
@@ -823,9 +914,17 @@
                 Select an option
               </option>
 
-              <option>Early development</option>
-              <option>First draft</option>
-              <option>Developed draft</option>
+              <option>
+                Early development
+              </option>
+
+              <option>
+                First draft
+              </option>
+
+              <option>
+                Developed draft
+              </option>
             </select>
           </label>
 
@@ -844,11 +943,29 @@
                 Select an option
               </option>
 
-              <option>Drop-In Surgery</option>
-              <option>Milestone Coaching</option>
-              <option>Script Engineering</option>
-              <option>Play</option>
-              <option>Storytelling Foundations</option>
+              <option>
+                Drop-In Surgery
+              </option>
+
+              <option>
+                Milestone Coaching
+              </option>
+
+              <option>
+                Script Engineering
+              </option>
+
+              <option>
+                Play &amp; Create
+              </option>
+
+              <option>
+                Storytelling Foundations
+              </option>
+
+              <option>
+                Fresh Eyes
+              </option>
             </select>
           </label>
 
@@ -867,11 +984,25 @@
                 Select an option
               </option>
 
-              <option>Plot</option>
-              <option>Character</option>
-              <option>Themes</option>
-              <option>Formatting</option>
-              <option>Other</option>
+              <option>
+                Plot
+              </option>
+
+              <option>
+                Character
+              </option>
+
+              <option>
+                Themes
+              </option>
+
+              <option>
+                Formatting
+              </option>
+
+              <option>
+                Other
+              </option>
             </select>
           </label>
 

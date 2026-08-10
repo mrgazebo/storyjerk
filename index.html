@@ -145,7 +145,7 @@
       width: 100%;
       height: 100%;
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(5, 1fr);
     }
 
     .site-nav a {
@@ -156,7 +156,7 @@
       padding: 0 0.35rem;
       color: var(--yellow);
       font-family: "Archivo Black", Impact, sans-serif;
-      font-size: clamp(0.42rem, 1vw, 0.72rem);
+      font-size: clamp(0.45rem, 1.1vw, 0.75rem);
       letter-spacing: 0.06em;
       text-align: center;
       text-decoration: none;
@@ -219,7 +219,6 @@
       position: relative;
       min-height: 100svh;
       overflow: hidden;
-      color: var(--yellow);
       background:
         url("assets/homepage-hero.jpg")
         center center / cover no-repeat;
@@ -228,7 +227,7 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(26, 26, 26, 0.68);
+      background: rgba(251, 219, 91, 0.30);
     }
 
     .hero-content {
@@ -251,6 +250,7 @@
     .hero h1 {
       width: 100%;
       margin: 0 0 2.2rem;
+      color: var(--black);
       font-size: clamp(3.5rem, 10vw, 8.5rem);
       line-height: 0.88;
       letter-spacing: -0.05em;
@@ -261,12 +261,16 @@
     .dictionary-definition {
       width: min(100%, 720px);
       margin: 0 auto;
-      color: var(--white);
+      color: var(--yellow);
       font-family: "Courier Prime", "Courier New", monospace;
       font-size: clamp(0.85rem, 1.45vw, 1.15rem);
       font-weight: 400;
       line-height: 1.45;
       text-align: left;
+
+      text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.8),
+        0 0 8px rgba(0, 0, 0, 0.35);
     }
 
     .dictionary-heading {
@@ -294,15 +298,16 @@
     }
 
     .hero .button {
-      color: var(--black);
-      background: var(--yellow);
-      border-color: var(--yellow);
+      color: var(--yellow);
+      background: var(--black);
+      border-color: var(--black);
     }
 
     .hero .button:hover,
     .hero .button:focus {
-      color: var(--yellow);
-      background: var(--black);
+      color: var(--black);
+      background: var(--yellow);
+      border-color: var(--yellow);
     }
 
     /* GENERAL PAGE SECTIONS */
@@ -315,7 +320,17 @@
       border-bottom: 4px solid var(--black);
     }
 
+    /*
+      TESTIMONIES ARE TEMPORARILY HIDDEN.
+
+      When you are ready to restore them, change:
+      display: none;
+      to:
+      display: flex;
+    */
+
     #testimonies {
+      display: none;
       color: var(--black);
       background: var(--yellow);
     }
@@ -341,7 +356,7 @@
       border-bottom: 0;
     }
 
-    /* SECTION 2: TESTIMONIAL CAROUSEL */
+    /* TESTIMONIAL CAROUSEL */
 
     .testimonial-section-inner {
       width: 100%;
@@ -457,7 +472,7 @@
       background: var(--black);
     }
 
-    /* SECTION 3: SERVICES */
+    /* SERVICES */
 
     .service-grid {
       width: 100%;
@@ -513,7 +528,7 @@
       text-transform: uppercase;
     }
 
-    /* SECTION 4: CONTACT */
+    /* CONTACT */
 
     .contact-area {
       display: grid;
@@ -561,7 +576,7 @@
       background: var(--black);
     }
 
-    /* SECTION 5: METHODOLOGY */
+    /* METHODOLOGY */
 
     .methodology-copy {
       width: min(100%, 900px);
@@ -574,7 +589,7 @@
       margin-bottom: 0;
     }
 
-    /* SECTION 6: ABOUT */
+    /* ABOUT */
 
     .about-grid {
       display: grid;
@@ -636,7 +651,7 @@
       }
 
       .site-nav {
-        min-width: 430px;
+        min-width: 360px;
       }
 
       .site-nav a {
@@ -759,7 +774,6 @@
     <div class="container nav-wrap">
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#home">Home</a>
-        <a href="#testimonies">Testimonies</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
         <a href="#methodology">Methodology</a>
@@ -779,15 +793,25 @@
         <h1>Story Jerk</h1>
 
         <div class="dictionary-definition">
-          <p class="dictionary-heading">jerk /jûrk/</p>
+          <p class="dictionary-heading">
+            jerk /jûrk/
+          </p>
 
-          <p class="dictionary-type">(verb)</p>
+          <p class="dictionary-type">
+            (verb)
+          </p>
 
-          <p>1. to give a sudden push or pull</p>
+          <p>
+            1. to give a sudden push or pull
+          </p>
 
-          <p>2. to motivate someone into action</p>
+          <p>
+            2. to motivate someone into action
+          </p>
 
-          <p class="dictionary-type">(noun)</p>
+          <p class="dictionary-type">
+            (noun)
+          </p>
 
           <p>
             1. someone who is frank, direct, and BS free
@@ -803,7 +827,12 @@
       </div>
     </section>
 
-    <!-- SECTION 2: TESTIMONIES -->
+    <!--
+      TESTIMONIES
+
+      This section is being kept in the HTML but is hidden
+      using CSS so it can easily be restored later.
+    -->
 
     <section class="page-section" id="testimonies">
       <div class="container testimonial-section-inner">
@@ -824,7 +853,9 @@
               >
 
               <div>
-                <h3 class="testimonial-name">Person One</h3>
+                <h3 class="testimonial-name">
+                  Person One
+                </h3>
 
                 <p class="testimonial-bio">
                   Writer, director or relevant credits
@@ -844,7 +875,9 @@
               >
 
               <div>
-                <h3 class="testimonial-name">Person Two</h3>
+                <h3 class="testimonial-name">
+                  Person Two
+                </h3>
 
                 <p class="testimonial-bio">
                   Company, production or relevant credits
@@ -864,7 +897,9 @@
               >
 
               <div>
-                <h3 class="testimonial-name">Person Three</h3>
+                <h3 class="testimonial-name">
+                  Person Three
+                </h3>
 
                 <p class="testimonial-bio">
                   Writer, filmmaker or relevant credits
@@ -884,7 +919,9 @@
               >
 
               <div>
-                <h3 class="testimonial-name">Person Four</h3>
+                <h3 class="testimonial-name">
+                  Person Four
+                </h3>
 
                 <p class="testimonial-bio">
                   Business, studio or relevant credits
@@ -904,7 +941,9 @@
               >
 
               <div>
-                <h3 class="testimonial-name">Person Five</h3>
+                <h3 class="testimonial-name">
+                  Person Five
+                </h3>
 
                 <p class="testimonial-bio">
                   Writer, producer or relevant credits
@@ -975,12 +1014,14 @@
       </div>
     </section>
 
-    <!-- SECTION 3: SERVICES -->
+    <!-- SERVICES -->
 
     <section class="page-section" id="services">
       <div class="container">
 
-        <p class="eyebrow">Services</p>
+        <p class="eyebrow">
+          Services
+        </p>
 
         <div class="service-grid">
 
@@ -991,13 +1032,18 @@
             >
 
             <div class="service-card-content">
-              <p class="service-number">1</p>
+              <p class="service-number">
+                1
+              </p>
 
-              <h3>Drop-In Surgery</h3>
+              <h3>
+                Drop-In Surgery
+              </h3>
 
               <p>
-                No commitments. No long-term coaching. Just a simple
-                one-to-one video call whenever you need it.
+                No commitments. No long-term coaching.
+                Just a simple one-to-one video call
+                whenever you need it.
               </p>
 
               <a class="text-link" href="#contact">
@@ -1013,13 +1059,17 @@
             >
 
             <div class="service-card-content">
-              <p class="service-number">2</p>
+              <p class="service-number">
+                2
+              </p>
 
-              <h3>Milestone Coaching</h3>
+              <h3>
+                Milestone Coaching
+              </h3>
 
               <p>
-                Bespoke long-term support and scheduling to hit the
-                next milestone of your project.
+                Bespoke long-term support and scheduling
+                to hit the next milestone of your project.
               </p>
 
               <a class="text-link" href="#contact">
@@ -1035,13 +1085,18 @@
             >
 
             <div class="service-card-content">
-              <p class="service-number">3</p>
+              <p class="service-number">
+                3
+              </p>
 
-              <h3>Script Engineering</h3>
+              <h3>
+                Script Engineering
+              </h3>
 
               <p>
-                Script consultation and coverage for practical feedback
-                to help you tell your story the way you want to tell it.
+                Script consultation and coverage for practical
+                feedback to help you tell your story the way
+                you want to tell it.
               </p>
 
               <a class="text-link" href="#contact">
@@ -1057,13 +1112,17 @@
             >
 
             <div class="service-card-content">
-              <p class="service-number">4</p>
+              <p class="service-number">
+                4
+              </p>
 
-              <h3>Play</h3>
+              <h3>
+                Play
+              </h3>
 
               <p>
-                Guided improvisation workshops to explore ideas and
-                discover inspiration.
+                Guided improvisation workshops to explore ideas
+                and discover inspiration.
               </p>
 
               <a class="text-link" href="#contact">
@@ -1079,13 +1138,17 @@
             >
 
             <div class="service-card-content">
-              <p class="service-number">5</p>
+              <p class="service-number">
+                5
+              </p>
 
-              <h3>Storytelling Foundations</h3>
+              <h3>
+                Storytelling Foundations
+              </h3>
 
               <p>
-                Private tuition for the principles of narrative design
-                and visual storytelling.
+                Private tuition for the principles of narrative
+                design and visual storytelling.
               </p>
 
               <a class="text-link" href="#contact">
@@ -1098,13 +1161,15 @@
       </div>
     </section>
 
-    <!-- SECTION 4: CONTACT -->
+    <!-- CONTACT -->
 
     <section class="page-section" id="contact">
       <div class="container contact-area">
 
         <div>
-          <p class="eyebrow">Contact</p>
+          <p class="eyebrow">
+            Contact
+          </p>
         </div>
 
         <form
@@ -1171,24 +1236,46 @@
                 Select an option
               </option>
 
-              <option>Screenplay</option>
-              <option>Teleplay</option>
-              <option>Treatment</option>
-              <option>Short film</option>
+              <option>
+                Screenplay
+              </option>
+
+              <option>
+                Teleplay
+              </option>
+
+              <option>
+                Treatment
+              </option>
+
+              <option>
+                Short film
+              </option>
             </select>
           </label>
 
           <label>
             Stage of development
 
-            <select name="Stage of development" required>
+            <select
+              name="Stage of development"
+              required
+            >
               <option value="" selected disabled>
                 Select an option
               </option>
 
-              <option>Early development</option>
-              <option>First draft script</option>
-              <option>Developed draft</option>
+              <option>
+                Early development
+              </option>
+
+              <option>
+                First draft script
+              </option>
+
+              <option>
+                Developed draft
+              </option>
             </select>
           </label>
 
@@ -1200,64 +1287,109 @@
                 Select an option
               </option>
 
-              <option>Drop-In Surgery</option>
-              <option>Milestone Coaching</option>
-              <option>Script Engineering</option>
-              <option>Play</option>
-              <option>Storytelling Foundations</option>
+              <option>
+                Drop-In Surgery
+              </option>
+
+              <option>
+                Milestone Coaching
+              </option>
+
+              <option>
+                Script Engineering
+              </option>
+
+              <option>
+                Play
+              </option>
+
+              <option>
+                Storytelling Foundations
+              </option>
             </select>
           </label>
 
           <label>
             Areas of development
 
-            <select name="Areas of development" required>
+            <select
+              name="Areas of development"
+              required
+            >
               <option value="" selected disabled>
                 Select an option
               </option>
 
-              <option>Plot</option>
-              <option>Character</option>
-              <option>Themes</option>
-              <option>Formatting</option>
-              <option>Other</option>
+              <option>
+                Plot
+              </option>
+
+              <option>
+                Character
+              </option>
+
+              <option>
+                Themes
+              </option>
+
+              <option>
+                Formatting
+              </option>
+
+              <option>
+                Other
+              </option>
             </select>
           </label>
 
-          <button class="button" type="submit">
+          <button
+            class="button"
+            type="submit"
+          >
             Send Message
           </button>
+
         </form>
 
       </div>
     </section>
 
-    <!-- SECTION 5: METHODOLOGY -->
+    <!-- METHODOLOGY -->
 
-    <section class="page-section" id="methodology">
+    <section
+      class="page-section"
+      id="methodology"
+    >
       <div class="container">
 
-        <p class="eyebrow">Methodology</p>
+        <p class="eyebrow">
+          Methodology
+        </p>
 
         <div class="methodology-copy">
+
           <p>
-            Replace this paragraph with your methodology. This section
-            can explain how you approach story editing, how you work
-            with writers, and what makes your process different.
+            Replace this paragraph with your methodology.
+            This section can explain how you approach story
+            editing, how you work with writers, and what
+            makes your process different.
           </p>
 
           <p>
-            You can use several paragraphs here. Keep each paragraph
-            inside its own opening and closing paragraph tags.
+            You can use several paragraphs here.
           </p>
+
         </div>
 
       </div>
     </section>
 
-    <!-- SECTION 6: ABOUT -->
+    <!-- ABOUT -->
 
-    <section class="page-section" id="about">
+    <section
+      class="page-section"
+      id="about"
+    >
       <div class="container about-grid">
 
         <div class="about-image">
@@ -1268,18 +1400,24 @@
         </div>
 
         <div class="about-copy">
-          <p class="eyebrow">About</p>
 
-          <p>
-            Replace this section with your biography. Explain your
-            background in filmmaking, story editing, teaching,
-            performance and workshop practice.
+          <p class="eyebrow">
+            About
           </p>
 
           <p>
-            You can also describe the kinds of writers and projects
-            you work with, and the values that shape your approach.
+            Replace this section with your biography.
+            Explain your background in filmmaking,
+            story editing, teaching, performance and
+            workshop practice.
           </p>
+
+          <p>
+            You can also describe the kinds of writers
+            and projects you work with, and the values
+            that shape your approach.
+          </p>
+
         </div>
 
       </div>
@@ -1307,6 +1445,10 @@
     let carouselTimer;
 
     function showTestimony(index) {
+      if (!testimonialCards.length) {
+        return;
+      }
+
       testimonialCards.forEach((card) => {
         card.classList.remove("active");
       });
@@ -1331,6 +1473,10 @@
     }
 
     function startCarousel() {
+      if (!carousel) {
+        return;
+      }
+
       clearInterval(carouselTimer);
 
       carouselTimer = setInterval(
@@ -1339,38 +1485,67 @@
       );
     }
 
-    previousButton.addEventListener("click", () => {
-      showTestimony(currentTestimony - 1);
-      startCarousel();
-    });
+    if (previousButton) {
+      previousButton.addEventListener(
+        "click",
+        () => {
+          showTestimony(currentTestimony - 1);
+          startCarousel();
+        }
+      );
+    }
 
-    nextButton.addEventListener("click", () => {
-      showNextTestimony();
-      startCarousel();
-    });
+    if (nextButton) {
+      nextButton.addEventListener(
+        "click",
+        () => {
+          showNextTestimony();
+          startCarousel();
+        }
+      );
+    }
 
-    testimonialDots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showTestimony(index);
-        startCarousel();
-      });
-    });
+    testimonialDots.forEach(
+      (dot, index) => {
+        dot.addEventListener(
+          "click",
+          () => {
+            showTestimony(index);
+            startCarousel();
+          }
+        );
+      }
+    );
 
-    carousel.addEventListener("mouseenter", () => {
-      clearInterval(carouselTimer);
-    });
+    if (carousel) {
+      carousel.addEventListener(
+        "mouseenter",
+        () => {
+          clearInterval(carouselTimer);
+        }
+      );
 
-    carousel.addEventListener("mouseleave", () => {
-      startCarousel();
-    });
+      carousel.addEventListener(
+        "mouseleave",
+        () => {
+          startCarousel();
+        }
+      );
 
-    carousel.addEventListener("focusin", () => {
-      clearInterval(carouselTimer);
-    });
+      carousel.addEventListener(
+        "focusin",
+        () => {
+          clearInterval(carouselTimer);
+        }
+      );
 
-    carousel.addEventListener("focusout", () => {
-      startCarousel();
-    });
+      carousel.addEventListener(
+        "focusout",
+        () => {
+          startCarousel();
+        }
+      );
+    }
 
     startCarousel();
   </script>

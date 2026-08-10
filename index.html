@@ -8,12 +8,100 @@
     content="width=device-width, initial-scale=1.0"
   >
 
+  <!-- PRIMARY SEO -->
+
+  <title>Story Jerk | Story Editor & Script Consultant</title>
+
   <meta
     name="description"
-    content="Alternative story editing and script development."
+    content="Story editing, screenplay consultation and script development for filmmakers and writers. Practical, collaborative story support from an NFTS Screenwriting MA graduate."
   >
 
-  <title>Story Jerk</title>
+  <link
+    rel="canonical"
+    href="https://storyjerk.com/"
+  >
+
+  <!-- OPEN GRAPH / SOCIAL SHARING -->
+
+  <meta
+    property="og:title"
+    content="Story Jerk | Story Editor & Script Consultant"
+  >
+
+  <meta
+    property="og:description"
+    content="Story editing, screenplay consultation and script development for filmmakers and writers."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://storyjerk.com/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://storyjerk.com/assets/homepage-hero.png"
+  >
+
+  <meta
+    property="og:site_name"
+    content="Story Jerk"
+  >
+
+  <!-- TWITTER / X SHARING -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Story Jerk | Story Editor & Script Consultant"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Story editing, screenplay consultation and script development for filmmakers and writers."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://storyjerk.com/assets/homepage-hero.png"
+  >
+
+  <!-- STRUCTURED DATA -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Story Jerk",
+    "url": "https://storyjerk.com/",
+    "description": "Story editing, screenplay consultation and script development for filmmakers and writers.",
+    "image": "https://storyjerk.com/assets/homepage-hero.png",
+    "sameAs": [
+      "https://www.youtube.com/@storyjerk"
+    ],
+    "knowsAbout": [
+      "Story editing",
+      "Screenwriting",
+      "Script development",
+      "Screenplay consultation",
+      "Script coverage",
+      "Visual storytelling",
+      "Film editing"
+    ]
+  }
+  </script>
+
+  <!-- FONTS -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -24,7 +112,7 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -93,6 +181,23 @@
       font-size: 0.85rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
+    }
+
+    /*
+      Gives the page a proper semantic H1 for search engines
+      and screen readers without changing the visual hero design.
+    */
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
     }
 
     .skip-link {
@@ -568,11 +673,20 @@
     >
       <div class="hero-inner">
 
+        <!--
+          Hidden from the visual layout because the Story Jerk
+          heading is already incorporated into the hero artwork.
+        -->
+
+        <h1 class="visually-hidden">
+          Story Jerk — Story Editing, Script Development and Screenplay Consultation
+        </h1>
+
         <div class="hero-image-wrap">
 
           <img
             src="assets/homepage-hero.png"
-            alt="Story Jerk"
+            alt="Story Jerk story editing and script development"
           >
 
         </div>
@@ -881,21 +995,10 @@
                 Select an option
               </option>
 
-              <option>
-                Screenplay
-              </option>
-
-              <option>
-                Teleplay
-              </option>
-
-              <option>
-                Treatment
-              </option>
-
-              <option>
-                Short film
-              </option>
+              <option>Screenplay</option>
+              <option>Teleplay</option>
+              <option>Treatment</option>
+              <option>Short film</option>
             </select>
           </label>
 
@@ -914,17 +1017,9 @@
                 Select an option
               </option>
 
-              <option>
-                Early development
-              </option>
-
-              <option>
-                First draft
-              </option>
-
-              <option>
-                Developed draft
-              </option>
+              <option>Early development</option>
+              <option>First draft</option>
+              <option>Developed draft</option>
             </select>
           </label>
 
@@ -943,29 +1038,12 @@
                 Select an option
               </option>
 
-              <option>
-                Drop-In Surgery
-              </option>
-
-              <option>
-                Milestone Coaching
-              </option>
-
-              <option>
-                Script Engineering
-              </option>
-
-              <option>
-                Play &amp; Create
-              </option>
-
-              <option>
-                Storytelling Foundations
-              </option>
-
-              <option>
-                Fresh Eyes
-              </option>
+              <option>Drop-In Surgery</option>
+              <option>Milestone Coaching</option>
+              <option>Script Engineering</option>
+              <option>Play &amp; Create</option>
+              <option>Storytelling Foundations</option>
+              <option>Fresh Eyes</option>
             </select>
           </label>
 
@@ -984,25 +1062,11 @@
                 Select an option
               </option>
 
-              <option>
-                Plot
-              </option>
-
-              <option>
-                Character
-              </option>
-
-              <option>
-                Themes
-              </option>
-
-              <option>
-                Formatting
-              </option>
-
-              <option>
-                Other
-              </option>
+              <option>Plot</option>
+              <option>Character</option>
+              <option>Themes</option>
+              <option>Formatting</option>
+              <option>Other</option>
             </select>
           </label>
 
@@ -1094,7 +1158,7 @@
 
           <img
             src="assets/about-portrait.png"
-            alt="Portrait of the Story Jerk story editor"
+            alt="Story Jerk story editor"
           >
 
         </div>
@@ -1106,18 +1170,18 @@
           </p>
 
           <p>
-            Graduate of the Screenwriting MA at the National Film
-            &amp; Television School of the United Kingdom, mentored
-            in story editing through Torino Film Lab by
+            Graduate of the Screenwriting MA at the
+            National Film and Television School (NFTS) of the United Kingdom of Great Britain,
+            mentored in story editing through Torino Film Lab by
             <a
               href="https://www.casarotto.co.uk/clients/anna-seifert-speck"
               target="_blank"
               rel="noopener noreferrer"
             >Anna Seifert-Speck</a>,
-            and host of the "tastefully edgy" and "suprisingly
-            insightful" YouTube channel
+            and host of the "tastefully edgy" and "suprisingly insightful"
+            YouTube channel
             '<a
-              href="http://www.youtube.com/@storyjerk"
+              href="https://www.youtube.com/@storyjerk"
               target="_blank"
               rel="noopener noreferrer"
             >Story Jerk</a>'.

@@ -314,24 +314,22 @@
       object-fit: cover;
     }
 
-    /*
-      HERO TEXT
-
-      The position and size use percentages and responsive font sizes
-      so the text remains attached to the image as it scales.
-    */
+    /* HERO TEXT */
 
     .hero-overlay {
       position: absolute;
-      left: 6%;
-      bottom: 7%;
+      top: 18%;
+      right: 7%;
+      bottom: auto;
+      left: auto;
       z-index: 2;
-      width: 70%;
+      width: 48%;
+      text-align: left;
     }
 
     .hero-title {
       margin: 0 0 0.5rem;
-      color: var(--black);
+      color: var(--yellow);
       font-family: "Archivo Black", Impact, sans-serif;
       font-size: clamp(2rem, 6vw, 5.5rem);
       line-height: 0.92;
@@ -340,9 +338,10 @@
     }
 
     .hero-subheading {
-      width: min(100%, 650px);
+      width: 100%;
+      max-width: 520px;
       margin: 0;
-      color: var(--black);
+      color: var(--yellow);
       font-family: "Space Grotesk", Arial, sans-serif;
       font-size: clamp(0.75rem, 1.8vw, 1.35rem);
       font-weight: 700;
@@ -602,9 +601,11 @@
       }
 
       .hero-overlay {
-        left: 5%;
-        bottom: 6%;
-        width: 82%;
+        top: 17%;
+        right: 6%;
+        bottom: auto;
+        left: auto;
+        width: 52%;
       }
 
       .hero-title {

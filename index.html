@@ -114,7 +114,7 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Courier+Prime:wght@400;700&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -318,17 +318,17 @@
 
     .hero-overlay {
       position: absolute;
-      top: 18%;
-      right: 7%;
+      top: 12%;
+      right: 6%;
       bottom: auto;
       left: auto;
       z-index: 2;
-      width: 48%;
+      width: 50%;
       text-align: left;
     }
 
     .hero-title {
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.55rem;
       color: var(--yellow);
       font-family: "Archivo Black", Impact, sans-serif;
       font-size: clamp(2rem, 6vw, 5.5rem);
@@ -339,14 +339,40 @@
 
     .hero-subheading {
       width: 100%;
-      max-width: 520px;
-      margin: 0;
+      max-width: 540px;
+      margin: 0 0 1.4rem;
       color: var(--yellow);
       font-family: "Space Grotesk", Arial, sans-serif;
-      font-size: clamp(0.75rem, 1.8vw, 1.35rem);
+      font-size: clamp(0.75rem, 1.65vw, 1.25rem);
       font-weight: 700;
       line-height: 1.25;
       text-transform: uppercase;
+    }
+
+    .dictionary-definition {
+      width: 100%;
+      max-width: 500px;
+      color: var(--yellow);
+      font-family: "Courier Prime", "Courier New", monospace;
+      line-height: 1.3;
+    }
+
+    .dictionary-word {
+      margin: 0 0 0.15rem;
+      font-size: clamp(0.85rem, 1.55vw, 1.25rem);
+      font-weight: 700;
+    }
+
+    .dictionary-type {
+      margin: 0 0 0.55rem;
+      font-size: clamp(0.65rem, 1.15vw, 0.95rem);
+      font-style: italic;
+    }
+
+    .dictionary-definition p {
+      margin: 0 0 0.18rem;
+      font-size: clamp(0.65rem, 1.15vw, 0.95rem);
+      font-weight: 400;
     }
 
     .hero-contact {
@@ -601,21 +627,36 @@
       }
 
       .hero-overlay {
-        top: 17%;
-        right: 6%;
+        top: 10%;
+        right: 5%;
         bottom: auto;
         left: auto;
-        width: 52%;
+        width: 54%;
       }
 
       .hero-title {
         margin-bottom: 0.25rem;
-        font-size: clamp(1.6rem, 9vw, 3rem);
+        font-size: clamp(1.5rem, 8.5vw, 3rem);
       }
 
       .hero-subheading {
-        font-size: clamp(0.55rem, 3vw, 0.9rem);
+        margin-bottom: 0.65rem;
+        font-size: clamp(0.48rem, 2.6vw, 0.82rem);
+        line-height: 1.15;
+      }
+
+      .dictionary-word {
+        font-size: clamp(0.55rem, 2.7vw, 0.85rem);
+      }
+
+      .dictionary-type,
+      .dictionary-definition p {
+        font-size: clamp(0.42rem, 2vw, 0.68rem);
         line-height: 1.2;
+      }
+
+      .dictionary-type {
+        margin-bottom: 0.3rem;
       }
 
       .hero-contact {
@@ -729,6 +770,26 @@
               Story editing and script development for film &amp; television
             </p>
 
+            <div class="dictionary-definition">
+
+              <p class="dictionary-word">
+                jerk /jûrk/
+              </p>
+
+              <p class="dictionary-type">
+                (verb)
+              </p>
+
+              <p>
+                1. to give a sudden push or pull
+              </p>
+
+              <p>
+                2. to inspire someone into action
+              </p>
+
+            </div>
+
           </div>
 
         </div>
@@ -776,6 +837,7 @@
               aria-label="Enquire about Drop-In Surgery"
             >
               <div class="service-card-content">
+
                 <p class="service-number">1</p>
 
                 <h3>Drop-In Surgery</h3>
@@ -785,6 +847,7 @@
                   Just a simple one-to-one video call
                   whenever you need it.
                 </p>
+
               </div>
             </a>
           </article>
@@ -796,6 +859,7 @@
               aria-label="Enquire about Milestone Coaching"
             >
               <div class="service-card-content">
+
                 <p class="service-number">2</p>
 
                 <h3>Milestone Coaching</h3>
@@ -804,6 +868,7 @@
                   Bespoke long-term support and scheduling
                   to hit the next milestone of your project.
                 </p>
+
               </div>
             </a>
           </article>
@@ -815,6 +880,7 @@
               aria-label="Enquire about Script Engineering"
             >
               <div class="service-card-content">
+
                 <p class="service-number">3</p>
 
                 <h3>Script Engineering</h3>
@@ -824,6 +890,7 @@
                   feedback to help you tell your story the way
                   you want to tell it.
                 </p>
+
               </div>
             </a>
           </article>
@@ -835,6 +902,7 @@
               aria-label="Enquire about Play and Create"
             >
               <div class="service-card-content">
+
                 <p class="service-number">4</p>
 
                 <h3>Play &amp; Create</h3>
@@ -844,6 +912,7 @@
                   through guided improvisation workshops,
                   whether alone or with actors.
                 </p>
+
               </div>
             </a>
           </article>
@@ -855,6 +924,7 @@
               aria-label="Enquire about Storytelling Foundations"
             >
               <div class="service-card-content">
+
                 <p class="service-number">5</p>
 
                 <h3>Storytelling Foundations</h3>
@@ -863,6 +933,7 @@
                   Private tuition for the principles
                   of narrative design and visual storytelling.
                 </p>
+
               </div>
             </a>
           </article>
@@ -874,6 +945,7 @@
               aria-label="Enquire about Fresh Eyes"
             >
               <div class="service-card-content">
+
                 <p class="service-number">6</p>
 
                 <h3>Fresh Eyes</h3>
@@ -883,6 +955,7 @@
                   current cut by combining my skills in
                   screenwriting and video editing.
                 </p>
+
               </div>
             </a>
           </article>

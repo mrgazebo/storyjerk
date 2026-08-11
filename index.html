@@ -527,7 +527,8 @@
     }
 
     .contact-form input,
-    .contact-form select {
+    .contact-form select,
+    .contact-form textarea {
       width: 100%;
       min-width: 0;
       padding: 0.7rem;
@@ -537,6 +538,25 @@
       border-radius: 0;
       font: inherit;
       font-size: 0.9rem;
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.45;
+    }
+
+    .contact-message {
+      grid-column: 1 / -1;
+    }
+
+    .character-note {
+      margin: -0.15rem 0 0;
+      color: var(--black);
+      font-size: 0.68rem;
+      font-weight: 600;
+      line-height: 1.2;
+      text-transform: none;
     }
 
     .contact-form .button {
@@ -713,6 +733,7 @@
         gap: 0.75rem;
       }
 
+      .contact-message,
       .contact-form .button {
         grid-column: auto;
       }
@@ -1063,31 +1084,59 @@
             value="table"
           >
 
+          <input
+            type="hidden"
+            name="_url"
+            value="https://storyjerk.com/"
+          >
+
           <label>
             Name
-            <input type="text" name="Name" required>
+            <input
+              type="text"
+              name="Name"
+              required
+            >
           </label>
 
           <label>
             Surname
-            <input type="text" name="Surname" required>
+            <input
+              type="text"
+              name="Surname"
+              required
+            >
           </label>
 
           <label>
             Email
-            <input type="email" name="Email" required>
+            <input
+              type="email"
+              name="Email"
+              required
+            >
           </label>
 
           <label>
             WhatsApp username (optional)
-            <input type="text" name="WhatsApp username">
+            <input
+              type="text"
+              name="WhatsApp username"
+            >
           </label>
 
           <label>
             Project
 
-            <select name="Project" required>
-              <option value="" selected disabled>
+            <select
+              name="Project"
+              required
+            >
+              <option
+                value=""
+                selected
+                disabled
+              >
                 Select an option
               </option>
 
@@ -1101,8 +1150,15 @@
           <label>
             Stage of development
 
-            <select name="Stage of development" required>
-              <option value="" selected disabled>
+            <select
+              name="Stage of development"
+              required
+            >
+              <option
+                value=""
+                selected
+                disabled
+              >
                 Select an option
               </option>
 
@@ -1115,8 +1171,15 @@
           <label>
             Service
 
-            <select name="Service" required>
-              <option value="" selected disabled>
+            <select
+              name="Service"
+              required
+            >
+              <option
+                value=""
+                selected
+                disabled
+              >
                 Select an option
               </option>
 
@@ -1132,8 +1195,15 @@
           <label>
             Areas of development
 
-            <select name="Areas of development" required>
-              <option value="" selected disabled>
+            <select
+              name="Areas of development"
+              required
+            >
+              <option
+                value=""
+                selected
+                disabled
+              >
                 Select an option
               </option>
 
@@ -1143,6 +1213,21 @@
               <option>Formatting</option>
               <option>Other</option>
             </select>
+          </label>
+
+          <label class="contact-message">
+            Message
+
+            <textarea
+              name="Message"
+              maxlength="300"
+              required
+              placeholder="Tell me a little about your project..."
+            ></textarea>
+
+            <span class="character-note">
+              Maximum 300 characters
+            </span>
           </label>
 
           <button

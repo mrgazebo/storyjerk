@@ -284,7 +284,7 @@
       border-bottom: 4px solid var(--black);
     }
 
-    /* HOME */
+    /* SECTION 1 — HOME */
 
     .hero {
       padding:
@@ -292,6 +292,7 @@
         0
         64px;
       background: var(--yellow);
+      border-bottom: 4px solid var(--black);
     }
 
     .hero-inner {
@@ -391,17 +392,48 @@
       margin-top: 1.5rem;
     }
 
-    /* TESTIMONIES - HIDDEN */
+    /* TESTIMONIES — HIDDEN FOR NOW */
 
     #testimonies {
       display: none;
     }
 
-    /* SERVICES */
+    /* SECTION 2 — METHODOLOGY */
 
-    #services {
+    #methodology {
       color: var(--yellow);
       background: var(--black);
+    }
+
+    .methodology-copy {
+      width: min(100%, 850px);
+      color: var(--white);
+      font-size: clamp(1rem, 1.7vw, 1.35rem);
+      line-height: 1.7;
+    }
+
+    .methodology-copy p {
+      margin-bottom: 1.35rem;
+    }
+
+    .methodology-copy p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .methodology-joke {
+      margin-top: 3rem;
+      color: var(--grey);
+      font-size: 0.62rem;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+
+    /* SECTION 3 — SERVICES */
+
+    #services {
+      color: var(--black);
+      background: var(--yellow);
     }
 
     .service-grid {
@@ -414,9 +446,9 @@
     .service-card {
       min-width: 0;
       overflow: hidden;
-      color: var(--black);
-      background: var(--yellow);
-      border: 3px solid var(--yellow);
+      color: var(--yellow);
+      background: var(--black);
+      border: 3px solid var(--black);
       transition: transform 150ms ease;
     }
 
@@ -460,11 +492,11 @@
       line-height: 1.5;
     }
 
-    /* CONTACT */
+    /* SECTION 4 — CONTACT */
 
     #contact {
-      color: var(--black);
-      background: var(--yellow);
+      color: var(--yellow);
+      background: var(--black);
     }
 
     .contact-area {
@@ -480,9 +512,9 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.85rem 1rem;
       padding: 1.4rem;
-      color: var(--yellow);
-      background: var(--black);
-      border: 4px solid var(--black);
+      color: var(--black);
+      background: var(--yellow);
+      border: 4px solid var(--yellow);
     }
 
     .contact-form label {
@@ -499,9 +531,9 @@
       width: 100%;
       min-width: 0;
       padding: 0.7rem;
-      color: var(--black);
-      background: var(--yellow);
-      border: 2px solid var(--yellow);
+      color: var(--yellow);
+      background: var(--black);
+      border: 2px solid var(--black);
       border-radius: 0;
       font: inherit;
       font-size: 0.9rem;
@@ -510,49 +542,18 @@
     .contact-form .button {
       grid-column: 1 / -1;
       margin-top: 0.3rem;
-      color: var(--black);
-      background: var(--yellow);
-      border-color: var(--yellow);
+      color: var(--yellow);
+      background: var(--black);
+      border-color: var(--black);
     }
 
     .contact-form .button:hover,
     .contact-form .button:focus {
-      color: var(--yellow);
-      background: var(--black);
+      color: var(--black);
+      background: var(--yellow);
     }
 
-    /* METHODOLOGY */
-
-    #methodology {
-      color: var(--yellow);
-      background: var(--black);
-    }
-
-    .methodology-copy {
-      width: min(100%, 850px);
-      color: var(--white);
-      font-size: clamp(1rem, 1.7vw, 1.35rem);
-      line-height: 1.7;
-    }
-
-    .methodology-copy p {
-      margin-bottom: 1.35rem;
-    }
-
-    .methodology-copy p:last-of-type {
-      margin-bottom: 0;
-    }
-
-    .methodology-joke {
-      margin-top: 3rem;
-      color: var(--grey);
-      font-size: 0.62rem;
-      font-weight: 500;
-      line-height: 1.2;
-      letter-spacing: 0.02em;
-    }
-
-    /* ABOUT */
+    /* SECTION 5 — ABOUT */
 
     #about {
       color: var(--black);
@@ -748,9 +749,9 @@
         aria-label="Main navigation"
       >
         <a href="#home">Home</a>
+        <a href="#methodology">Methodology</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-        <a href="#methodology">Methodology</a>
         <a href="#about">About</a>
       </nav>
 
@@ -759,7 +760,7 @@
 
   <main id="main-content">
 
-    <!-- HOME -->
+    <!-- SECTION 1 — HOME -->
 
     <section
       class="hero"
@@ -828,7 +829,7 @@
       </div>
     </section>
 
-    <!-- TESTIMONIES - HIDDEN FOR NOW -->
+    <!-- TESTIMONIES — HIDDEN FOR NOW -->
 
     <section
       class="page-section"
@@ -836,7 +837,71 @@
     >
     </section>
 
-    <!-- SERVICES -->
+    <!-- SECTION 2 — METHODOLOGY -->
+
+    <section
+      class="page-section"
+      id="methodology"
+    >
+      <div class="container">
+
+        <p class="eyebrow">
+          Methodology
+        </p>
+
+        <div class="methodology-copy">
+
+          <p>
+            Story editing isn't about fixing problems for you.
+            It's about helping you discover the best idea for
+            the story you want to tell in the way you want to tell it.
+          </p>
+
+          <p>
+            How?
+          </p>
+
+          <p>
+            By listening, understanding, and (most importantly) playing.
+          </p>
+
+          <p>
+            Play is at the heart of my process. Forget overthinking
+            backstory and getting intimidated by plot.
+            We are here to create!
+          </p>
+
+          <p>
+            Through play, it becomes easier (and more fun) to analyse,
+            experiment, and decide. It becomes easier to step outside
+            the writing process and experience your story as the audience.
+            It becomes easier to write.
+          </p>
+
+          <p>
+            That's why my aim is to simplify the process. Together,
+            we will cut the crap, silence the critic in your head
+            (which isn't even YOU anyway*), and get to the heart of
+            what you're really trying to say.
+          </p>
+
+          <p>
+            With the Story Jerk method, you'll find a clear point of
+            orientation to keep you on track and the confidence to
+            explore the blank page, so you can remain focused and open
+            and excited no matter where you are in the process.
+          </p>
+
+          <div class="methodology-joke">
+            *thanks mum and dad
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3 — SERVICES -->
 
     <section
       class="page-section"
@@ -966,7 +1031,7 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- SECTION 4 — CONTACT -->
 
     <section
       class="page-section"
@@ -1092,71 +1157,7 @@
       </div>
     </section>
 
-    <!-- METHODOLOGY -->
-
-    <section
-      class="page-section"
-      id="methodology"
-    >
-      <div class="container">
-
-        <p class="eyebrow">
-          Methodology
-        </p>
-
-        <div class="methodology-copy">
-
-          <p>
-            Story editing isn't about fixing problems for you.
-            It's about helping you discover the best idea for
-            the story you want to tell in the way you want to tell it.
-          </p>
-
-          <p>
-            How?
-          </p>
-
-          <p>
-            By listening, understanding, and (most importantly) playing.
-          </p>
-
-          <p>
-            Play is at the heart of my process. Forget overthinking
-            backstory and getting intimidated by plot.
-            We are here to create!
-          </p>
-
-          <p>
-            Through play, it becomes easier (and more fun) to analyse,
-            experiment, and decide. It becomes easier to step outside
-            the writing process and experience your story as the audience.
-            It becomes easier to write.
-          </p>
-
-          <p>
-            That's why my aim is to simplify the process. Together,
-            we will cut the crap, silence the critic in your head
-            (which isn't even YOU anyway*), and get to the heart of
-            what you're really trying to say.
-          </p>
-
-          <p>
-            With the Story Jerk method, you'll find a clear point of
-            orientation to keep you on track and the confidence to
-            explore the blank page, so you can remain focused and open
-            and excited no matter where you are in the process.
-          </p>
-
-          <div class="methodology-joke">
-            *thanks mum and dad
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ABOUT -->
+    <!-- SECTION 5 — ABOUT -->
 
     <section
       class="page-section"

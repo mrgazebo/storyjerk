@@ -31,7 +31,7 @@
 
   <meta
     property="og:description"
-    content="Story editing, screenplay consultation and script development for filmmakers and writers."
+    content="Story editing and script development for film & television."
   >
 
   <meta
@@ -54,7 +54,7 @@
     content="Story Jerk"
   >
 
-  <!-- TWITTER / X SHARING -->
+  <!-- TWITTER / X -->
 
   <meta
     name="twitter:card"
@@ -68,7 +68,7 @@
 
   <meta
     name="twitter:description"
-    content="Story editing, screenplay consultation and script development for filmmakers and writers."
+    content="Story editing and script development for film & television."
   >
 
   <meta
@@ -84,7 +84,7 @@
     "@type": "ProfessionalService",
     "name": "Story Jerk",
     "url": "https://storyjerk.com/",
-    "description": "Story editing, screenplay consultation and script development for filmmakers and writers.",
+    "description": "Story editing and script development for film and television.",
     "image": "https://storyjerk.com/assets/homepage-hero.png",
     "sameAs": [
       "https://www.youtube.com/@storyjerk"
@@ -96,7 +96,9 @@
       "Screenplay consultation",
       "Script coverage",
       "Visual storytelling",
-      "Film editing"
+      "Film editing",
+      "Film",
+      "Television"
     ]
   }
   </script>
@@ -183,23 +185,6 @@
       text-transform: uppercase;
     }
 
-    /*
-      Gives the page a proper semantic H1 for search engines
-      and screen readers without changing the visual hero design.
-    */
-
-    .visually-hidden {
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      padding: 0 !important;
-      margin: -1px !important;
-      overflow: hidden !important;
-      clip: rect(0, 0, 0, 0) !important;
-      white-space: nowrap !important;
-      border: 0 !important;
-    }
-
     .skip-link {
       position: absolute;
       top: -100px;
@@ -214,7 +199,7 @@
       top: 1rem;
     }
 
-    /* FIXED NAVIGATION */
+    /* NAVIGATION */
 
     .site-header {
       position: fixed;
@@ -315,6 +300,7 @@
     }
 
     .hero-image-wrap {
+      position: relative;
       width: 100%;
       aspect-ratio: 3 / 2;
       overflow: hidden;
@@ -328,13 +314,49 @@
       object-fit: cover;
     }
 
+    /*
+      HERO TEXT
+
+      The position and size use percentages and responsive font sizes
+      so the text remains attached to the image as it scales.
+    */
+
+    .hero-overlay {
+      position: absolute;
+      left: 6%;
+      bottom: 7%;
+      z-index: 2;
+      width: 70%;
+    }
+
+    .hero-title {
+      margin: 0 0 0.5rem;
+      color: var(--black);
+      font-family: "Archivo Black", Impact, sans-serif;
+      font-size: clamp(2rem, 6vw, 5.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+    }
+
+    .hero-subheading {
+      width: min(100%, 650px);
+      margin: 0;
+      color: var(--black);
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: clamp(0.75rem, 1.8vw, 1.35rem);
+      font-weight: 700;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
     .hero-contact {
       display: flex;
       justify-content: center;
       margin-top: 1.5rem;
     }
 
-    /* TESTIMONIES - HIDDEN FOR NOW */
+    /* TESTIMONIES - HIDDEN */
 
     #testimonies {
       display: none;
@@ -579,6 +601,22 @@
         aspect-ratio: 3 / 2;
       }
 
+      .hero-overlay {
+        left: 5%;
+        bottom: 6%;
+        width: 82%;
+      }
+
+      .hero-title {
+        margin-bottom: 0.25rem;
+        font-size: clamp(1.6rem, 9vw, 3rem);
+      }
+
+      .hero-subheading {
+        font-size: clamp(0.55rem, 3vw, 0.9rem);
+        line-height: 1.2;
+      }
+
       .hero-contact {
         margin-top: 1.2rem;
       }
@@ -673,21 +711,24 @@
     >
       <div class="hero-inner">
 
-        <!--
-          Hidden from the visual layout because the Story Jerk
-          heading is already incorporated into the hero artwork.
-        -->
-
-        <h1 class="visually-hidden">
-          Story Jerk — Story Editing, Script Development and Screenplay Consultation
-        </h1>
-
         <div class="hero-image-wrap">
 
           <img
             src="assets/homepage-hero.png"
-            alt="Story Jerk story editing and script development"
+            alt=""
           >
+
+          <div class="hero-overlay">
+
+            <h1 class="hero-title">
+              Story Jerk
+            </h1>
+
+            <p class="hero-subheading">
+              Story editing and script development for film &amp; television
+            </p>
+
+          </div>
 
         </div>
 
@@ -727,182 +768,122 @@
 
         <div class="service-grid">
 
-          <!-- SERVICE 1 -->
-
           <article class="service-card">
-
             <a
               class="service-card-link"
               href="#contact"
               aria-label="Enquire about Drop-In Surgery"
             >
               <div class="service-card-content">
+                <p class="service-number">1</p>
 
-                <p class="service-number">
-                  1
-                </p>
-
-                <h3>
-                  Drop-In Surgery
-                </h3>
+                <h3>Drop-In Surgery</h3>
 
                 <p>
                   No commitments. No long-term coaching.
                   Just a simple one-to-one video call
                   whenever you need it.
                 </p>
-
               </div>
             </a>
-
           </article>
 
-          <!-- SERVICE 2 -->
-
           <article class="service-card">
-
             <a
               class="service-card-link"
               href="#contact"
               aria-label="Enquire about Milestone Coaching"
             >
               <div class="service-card-content">
+                <p class="service-number">2</p>
 
-                <p class="service-number">
-                  2
-                </p>
-
-                <h3>
-                  Milestone Coaching
-                </h3>
+                <h3>Milestone Coaching</h3>
 
                 <p>
                   Bespoke long-term support and scheduling
                   to hit the next milestone of your project.
                 </p>
-
               </div>
             </a>
-
           </article>
 
-          <!-- SERVICE 3 -->
-
           <article class="service-card">
-
             <a
               class="service-card-link"
               href="#contact"
               aria-label="Enquire about Script Engineering"
             >
               <div class="service-card-content">
+                <p class="service-number">3</p>
 
-                <p class="service-number">
-                  3
-                </p>
-
-                <h3>
-                  Script Engineering
-                </h3>
+                <h3>Script Engineering</h3>
 
                 <p>
                   Script consultation and coverage for practical
                   feedback to help you tell your story the way
                   you want to tell it.
                 </p>
-
               </div>
             </a>
-
           </article>
 
-          <!-- SERVICE 4 -->
-
           <article class="service-card">
-
             <a
               class="service-card-link"
               href="#contact"
               aria-label="Enquire about Play and Create"
             >
               <div class="service-card-content">
+                <p class="service-number">4</p>
 
-                <p class="service-number">
-                  4
-                </p>
-
-                <h3>
-                  Play &amp; Create
-                </h3>
+                <h3>Play &amp; Create</h3>
 
                 <p>
                   Road test your script and uncover story ideas
                   through guided improvisation workshops,
                   whether alone or with actors.
                 </p>
-
               </div>
             </a>
-
           </article>
 
-          <!-- SERVICE 5 -->
-
           <article class="service-card">
-
             <a
               class="service-card-link"
               href="#contact"
               aria-label="Enquire about Storytelling Foundations"
             >
               <div class="service-card-content">
+                <p class="service-number">5</p>
 
-                <p class="service-number">
-                  5
-                </p>
-
-                <h3>
-                  Storytelling Foundations
-                </h3>
+                <h3>Storytelling Foundations</h3>
 
                 <p>
                   Private tuition for the principles
                   of narrative design and visual storytelling.
                 </p>
-
               </div>
             </a>
-
           </article>
 
-          <!-- SERVICE 6 -->
-
           <article class="service-card">
-
             <a
               class="service-card-link"
               href="#contact"
               aria-label="Enquire about Fresh Eyes"
             >
               <div class="service-card-content">
+                <p class="service-number">6</p>
 
-                <p class="service-number">
-                  6
-                </p>
-
-                <h3>
-                  Fresh Eyes
-                </h3>
+                <h3>Fresh Eyes</h3>
 
                 <p>
                   Get a refreshing outsider's insight on your
                   current cut by combining my skills in
                   screenwriting and video editing.
                 </p>
-
               </div>
             </a>
-
           </article>
 
         </div>
@@ -943,55 +924,29 @@
 
           <label>
             Name
-
-            <input
-              type="text"
-              name="Name"
-              required
-            >
+            <input type="text" name="Name" required>
           </label>
 
           <label>
             Surname
-
-            <input
-              type="text"
-              name="Surname"
-              required
-            >
+            <input type="text" name="Surname" required>
           </label>
 
           <label>
             Email
-
-            <input
-              type="email"
-              name="Email"
-              required
-            >
+            <input type="email" name="Email" required>
           </label>
 
           <label>
             WhatsApp username (optional)
-
-            <input
-              type="text"
-              name="WhatsApp username"
-            >
+            <input type="text" name="WhatsApp username">
           </label>
 
           <label>
             Project
 
-            <select
-              name="Project"
-              required
-            >
-              <option
-                value=""
-                selected
-                disabled
-              >
+            <select name="Project" required>
+              <option value="" selected disabled>
                 Select an option
               </option>
 
@@ -1005,15 +960,8 @@
           <label>
             Stage of development
 
-            <select
-              name="Stage of development"
-              required
-            >
-              <option
-                value=""
-                selected
-                disabled
-              >
+            <select name="Stage of development" required>
+              <option value="" selected disabled>
                 Select an option
               </option>
 
@@ -1026,15 +974,8 @@
           <label>
             Service
 
-            <select
-              name="Service"
-              required
-            >
-              <option
-                value=""
-                selected
-                disabled
-              >
+            <select name="Service" required>
+              <option value="" selected disabled>
                 Select an option
               </option>
 
@@ -1050,15 +991,8 @@
           <label>
             Areas of development
 
-            <select
-              name="Areas of development"
-              required
-            >
-              <option
-                value=""
-                selected
-                disabled
-              >
+            <select name="Areas of development" required>
+              <option value="" selected disabled>
                 Select an option
               </option>
 
@@ -1171,7 +1105,7 @@
 
           <p>
             Graduate of the Screenwriting MA at the
-            National Film and Television School (NFTS) of the United Kingdom of Great Britain,
+            National Film and Television School (NFTS) of the United Kingdom,
             mentored in story editing through Torino Film Lab by
             <a
               href="https://www.casarotto.co.uk/clients/anna-seifert-speck"

@@ -1,83 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- PRIMARY SEO -->
-
   <title>Story Jerk | Story Editor & Script Consultant</title>
+  <meta name="description" content="Story editing, screenplay consultation and script development for filmmakers and writers. Practical, collaborative story support from an NFTS Screenwriting MA graduate.">
+  <link rel="canonical" href="https://storyjerk.com/">
 
-  <meta
-    name="description"
-    content="Story editing, screenplay consultation and script development for filmmakers and writers. Practical, collaborative story support from an NFTS Screenwriting MA graduate."
-  >
-
-  <link
-    rel="canonical"
-    href="https://storyjerk.com/"
-  >
-
-  <!-- OPEN GRAPH / SOCIAL SHARING -->
-
-  <meta
-    property="og:title"
-    content="Story Jerk | Story Editor & Script Consultant"
-  >
-
-  <meta
-    property="og:description"
-    content="Story editing and script development for film & television."
-  >
-
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:url"
-    content="https://storyjerk.com/"
-  >
-
-  <meta
-    property="og:image"
-    content="https://storyjerk.com/assets/homepage-hero.png"
-  >
-
-  <meta
-    property="og:site_name"
-    content="Story Jerk"
-  >
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Story Jerk | Story Editor & Script Consultant">
+  <meta property="og:description" content="Story editing and script development for film & television.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://storyjerk.com/">
+  <meta property="og:image" content="https://storyjerk.com/assets/homepage-hero.png">
+  <meta property="og:site_name" content="Story Jerk">
 
   <!-- TWITTER / X -->
-
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  >
-
-  <meta
-    name="twitter:title"
-    content="Story Jerk | Story Editor & Script Consultant"
-  >
-
-  <meta
-    name="twitter:description"
-    content="Story editing and script development for film & television."
-  >
-
-  <meta
-    name="twitter:image"
-    content="https://storyjerk.com/assets/homepage-hero.png"
-  >
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Story Jerk | Story Editor & Script Consultant">
+  <meta name="twitter:description" content="Story editing and script development for film & television.">
+  <meta name="twitter:image" content="https://storyjerk.com/assets/homepage-hero.png">
 
   <!-- STRUCTURED DATA -->
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -104,19 +51,9 @@
   </script>
 
   <!-- FONTS -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Courier+Prime:wght@400;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Courier+Prime:wght@400;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -156,17 +93,11 @@
       color: inherit;
     }
 
-    h1,
-    h2,
-    h3,
-    p,
-    blockquote {
+    h1, h2, h3, p, blockquote {
       margin-top: 0;
     }
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       font-family: "Archivo Black", Impact, sans-serif;
       line-height: 1;
       letter-spacing: -0.035em;
@@ -287,10 +218,7 @@
     /* SECTION 1 — HOME */
 
     .hero {
-      padding:
-        calc(var(--nav-height) + 48px)
-        0
-        64px;
+      padding: calc(var(--nav-height) + 48px) 0 64px;
       background: var(--yellow);
       border-bottom: 4px solid var(--black);
     }
@@ -392,13 +320,143 @@
       margin-top: 1.5rem;
     }
 
-    /* TESTIMONIES — HIDDEN FOR NOW */
+    /* SECTION 2 — TESTIMONIALS */
 
     #testimonies {
-      display: none;
+      color: var(--black);
+      background: var(--yellow);
     }
 
-    /* SECTION 2 — METHODOLOGY */
+    .testimonial-heading {
+      margin-bottom: 2rem;
+    }
+
+    .testimonial-carousel {
+      border: 4px solid var(--black);
+      background: var(--black);
+      color: var(--yellow);
+    }
+
+    .testimonial-viewport {
+      overflow: hidden;
+    }
+
+    .testimonial-track {
+      display: flex;
+      align-items: stretch;
+      transition: transform 550ms ease;
+    }
+
+    .testimonial-slide {
+      flex: 0 0 100%;
+      min-width: 0;
+      display: grid;
+      grid-template-columns:
+        minmax(180px, 0.75fr)
+        minmax(0, 1.6fr);
+      gap: clamp(1.5rem, 4vw, 4rem);
+      align-items: center;
+      padding: clamp(1.25rem, 4vw, 3rem);
+    }
+
+    .testimonial-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center 25%;
+      background: var(--grey);
+      border: 3px solid var(--yellow);
+    }
+
+    .testimonial-name {
+      margin-bottom: 0.35rem;
+      font-family: "Archivo Black", Impact, sans-serif;
+      font-size: clamp(1.2rem, 2.6vw, 2rem);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .testimonial-role {
+      margin-bottom: 1.5rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .testimonial-quote {
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(1.05rem, 1.85vw, 1.4rem);
+      line-height: 1.65;
+    }
+
+    .testimonial-quote p {
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-quote p:last-child {
+      margin-bottom: 0;
+    }
+
+    .testimonial-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1.25rem;
+      border-top: 2px solid var(--yellow);
+    }
+
+    .testimonial-arrow {
+      min-width: 44px;
+      min-height: 44px;
+      border: 2px solid var(--yellow);
+      color: var(--yellow);
+      background: var(--black);
+      font: 700 1.4rem/1 "Space Grotesk", Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .testimonial-arrow:hover,
+    .testimonial-arrow:focus-visible {
+      color: var(--black);
+      background: var(--yellow);
+    }
+
+    .testimonial-dots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+    }
+
+    .testimonial-dot {
+      width: 13px;
+      height: 13px;
+      padding: 0;
+      border: 2px solid var(--yellow);
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .testimonial-dot[aria-current="true"] {
+      background: var(--yellow);
+    }
+
+    .testimonial-dot:focus-visible {
+      outline: 2px solid var(--white);
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .testimonial-track {
+        transition: none;
+      }
+    }
+
+    /* SECTION 3 — METHODOLOGY */
 
     #methodology {
       color: var(--yellow);
@@ -429,7 +487,7 @@
       letter-spacing: 0.02em;
     }
 
-    /* SECTION 3 — SERVICES */
+    /* SECTION 4 — SERVICES */
 
     #services {
       color: var(--black);
@@ -492,7 +550,7 @@
       line-height: 1.5;
     }
 
-    /* SECTION 4 — CONTACT */
+    /* SECTION 5 — CONTACT */
 
     #contact {
       color: var(--yellow);
@@ -573,7 +631,7 @@
       background: var(--yellow);
     }
 
-    /* SECTION 5 — ABOUT */
+    /* SECTION 6 — ABOUT */
 
     #about {
       color: var(--black);
@@ -647,10 +705,7 @@
       }
 
       .hero {
-        padding:
-          calc(var(--nav-height) + 28px)
-          0
-          48px;
+        padding: calc(var(--nav-height) + 28px) 0 48px;
       }
 
       .hero-image-wrap {
@@ -708,6 +763,30 @@
         padding: 54px 0;
       }
 
+      /* MOBILE TESTIMONIALS */
+
+      .testimonial-slide {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .testimonial-photo {
+        width: min(100%, 230px);
+        margin-inline: auto;
+      }
+
+      .testimonial-copy {
+        text-align: center;
+      }
+
+      .testimonial-role {
+        margin-bottom: 1rem;
+      }
+
+      .testimonial-controls {
+        padding: 0.65rem 0.75rem;
+      }
+
       .service-grid {
         grid-template-columns: 1fr;
       }
@@ -755,27 +834,21 @@
 
 <body>
 
-  <a
-    class="skip-link"
-    href="#main-content"
-  >
+  <a class="skip-link" href="#main-content">
     Skip to content
   </a>
 
+  <!-- NAVIGATION -->
+
   <header class="site-header">
     <div class="container nav-wrap">
-
-      <nav
-        class="site-nav"
-        aria-label="Main navigation"
-      >
+      <nav class="site-nav" aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#methodology">Methodology</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
       </nav>
-
     </div>
   </header>
 
@@ -783,18 +856,11 @@
 
     <!-- SECTION 1 — HOME -->
 
-    <section
-      class="hero"
-      id="home"
-    >
+    <section class="hero" id="home">
       <div class="hero-inner">
 
         <div class="hero-image-wrap">
-
-          <img
-            src="assets/homepage-hero.png"
-            alt=""
-          >
+          <img src="assets/homepage-hero.png" alt="">
 
           <div class="hero-overlay">
 
@@ -806,64 +872,249 @@
               <span class="hero-subheading-line">
                 Story editing and script
               </span>
-
               <span class="hero-subheading-line">
                 development for film &amp; television
               </span>
             </p>
 
             <div class="dictionary-definition">
-
               <p class="dictionary-word">
                 jerk /jûrk/
               </p>
-
               <p class="dictionary-type">
                 (verb)
               </p>
-
               <p>
                 1. to give a sudden push or pull
               </p>
-
               <p>
                 2. to inspire someone into action
               </p>
-
             </div>
 
           </div>
-
         </div>
 
         <div class="hero-contact">
-
-          <a
-            class="button"
-            href="#contact"
-          >
+          <a class="button" href="#contact">
             Get in touch
           </a>
-
         </div>
 
       </div>
     </section>
 
-    <!-- TESTIMONIES — HIDDEN FOR NOW -->
+    <!-- SECTION 2 — TESTIMONIALS -->
 
     <section
       class="page-section"
       id="testimonies"
+      aria-labelledby="testimonies-heading"
     >
+      <div class="container">
+
+        <h2 class="eyebrow testimonial-heading" id="testimonies-heading">
+          Testimonials
+        </h2>
+
+        <div
+          class="testimonial-carousel"
+          aria-roledescription="carousel"
+          aria-label="Client testimonials"
+        >
+
+          <div class="testimonial-viewport">
+            <div class="testimonial-track" id="testimonial-track">
+
+              <!-- TESTIMONIAL 1 — MB -->
+
+              <article
+                class="testimonial-slide"
+                aria-roledescription="slide"
+                aria-label="1 of 3"
+              >
+
+                <img
+                  class="testimonial-photo"
+                  src="assets/testimonial-MB.png"
+                  alt="Portrait of MB"
+                  loading="lazy"
+                  width="600"
+                  height="600"
+                >
+
+                <div class="testimonial-copy">
+
+                  <h3 class="testimonial-name">
+                    MB
+                  </h3>
+
+                  <p class="testimonial-role">
+                    Screenwriter
+                  </p>
+
+                  <blockquote class="testimonial-quote">
+
+                    <p>
+                      “Sam has a great combination of skills: he has a deep
+                      understanding of story structure, while also being a
+                      thoughtful and intuitive listener.
+                    </p>
+
+                    <p>
+                      He has a talent for identifying what belongs in a story,
+                      what doesn’t, and how to strengthen its emotional and
+                      dramatic stakes without ever forcing his own vision
+                      onto the material.
+                    </p>
+
+                    <p>
+                      What I appreciate about Sam is how collaborative his
+                      approach is. He creates a space where ideas can develop
+                      freely, while still offering clear structure and
+                      direction. His feedback is smart, practical, and
+                      rooted in storytelling. Besides that, Sam brings
+                      humour, and originality into the room.”
+                    </p>
+
+                  </blockquote>
+
+                </div>
+              </article>
+
+              <!-- TESTIMONIAL 2 — AW -->
+
+              <article
+                class="testimonial-slide"
+                aria-roledescription="slide"
+                aria-label="2 of 3"
+              >
+
+                <img
+                  class="testimonial-photo"
+                  src="assets/testimonial-AW.png"
+                  alt="Portrait of AW"
+                  loading="lazy"
+                  width="600"
+                  height="600"
+                >
+
+                <div class="testimonial-copy">
+
+                  <h3 class="testimonial-name">
+                    AW
+                  </h3>
+
+                  <p class="testimonial-role">
+                    Director
+                  </p>
+
+                  <blockquote class="testimonial-quote">
+                    “Sam wrote the film that started my career.
+                    I owe him that and my greatest gratitude.
+                    Without him, my directing career wouldn’t exist.
+                    He is head strong, clever and forceful but my god
+                    he knows character and how to entertain an audience.
+                    Sam is a writer, a raconteur, and a pain in the ass.
+                    Hire him if you want the best.”
+                  </blockquote>
+
+                </div>
+              </article>
+
+              <!-- TESTIMONIAL 3 — TO -->
+
+              <article
+                class="testimonial-slide"
+                aria-roledescription="slide"
+                aria-label="3 of 3"
+              >
+
+                <img
+                  class="testimonial-photo"
+                  src="assets/testimonial-TO.png"
+                  alt="Portrait of TO"
+                  loading="lazy"
+                  width="600"
+                  height="600"
+                >
+
+                <div class="testimonial-copy">
+
+                  <h3 class="testimonial-name">
+                    TO
+                  </h3>
+
+                  <p class="testimonial-role">
+                    Writer/Director
+                  </p>
+
+                  <blockquote class="testimonial-quote">
+                    “tbc”
+                  </blockquote>
+
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- CAROUSEL CONTROLS -->
+
+          <div class="testimonial-controls" aria-label="Testimonial controls">
+
+            <button
+              class="testimonial-arrow"
+              type="button"
+              id="testimonial-prev"
+              aria-label="Previous testimonial"
+            >
+              &#8592;
+            </button>
+
+            <div class="testimonial-dots" aria-label="Choose testimonial">
+
+              <button
+                class="testimonial-dot"
+                type="button"
+                aria-label="Show testimonial 1"
+                aria-current="true"
+              ></button>
+
+              <button
+                class="testimonial-dot"
+                type="button"
+                aria-label="Show testimonial 2"
+                aria-current="false"
+              ></button>
+
+              <button
+                class="testimonial-dot"
+                type="button"
+                aria-label="Show testimonial 3"
+                aria-current="false"
+              ></button>
+
+            </div>
+
+            <button
+              class="testimonial-arrow"
+              type="button"
+              id="testimonial-next"
+              aria-label="Next testimonial"
+            >
+              &#8594;
+            </button>
+
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <!-- SECTION 2 — METHODOLOGY -->
+    <!-- SECTION 3 — METHODOLOGY -->
 
-    <section
-      class="page-section"
-      id="methodology"
-    >
+    <section class="page-section" id="methodology">
       <div class="container">
 
         <p class="eyebrow">
@@ -922,12 +1173,9 @@
       </div>
     </section>
 
-    <!-- SECTION 3 — SERVICES -->
+    <!-- SECTION 4 — SERVICES -->
 
-    <section
-      class="page-section"
-      id="services"
-    >
+    <section class="page-section" id="services">
       <div class="container">
 
         <p class="eyebrow">
@@ -945,7 +1193,6 @@
               <div class="service-card-content">
                 <p class="service-number">1</p>
                 <h3>Drop-In Surgery</h3>
-
                 <p>
                   No commitments. No long-term coaching.
                   Just a simple one-to-one video call
@@ -964,7 +1211,6 @@
               <div class="service-card-content">
                 <p class="service-number">2</p>
                 <h3>Milestone Coaching</h3>
-
                 <p>
                   Bespoke long-term support and scheduling
                   to hit the next milestone of your project.
@@ -982,7 +1228,6 @@
               <div class="service-card-content">
                 <p class="service-number">3</p>
                 <h3>Script Engineering</h3>
-
                 <p>
                   Script consultation and coverage for practical
                   feedback to help you tell your story the way
@@ -1001,7 +1246,6 @@
               <div class="service-card-content">
                 <p class="service-number">4</p>
                 <h3>Play &amp; Create</h3>
-
                 <p>
                   Road test your script and uncover story ideas
                   through guided improvisation workshops,
@@ -1020,7 +1264,6 @@
               <div class="service-card-content">
                 <p class="service-number">5</p>
                 <h3>Storytelling Foundations</h3>
-
                 <p>
                   Private tuition for the principles
                   of narrative design and visual storytelling.
@@ -1038,7 +1281,6 @@
               <div class="service-card-content">
                 <p class="service-number">6</p>
                 <h3>Fresh Eyes</h3>
-
                 <p>
                   Get a refreshing outsider's insight on your
                   current cut by combining my skills in
@@ -1052,12 +1294,10 @@
       </div>
     </section>
 
-    <!-- SECTION 4 — CONTACT -->
+    <!-- SECTION 5 — CONTACT -->
 
-    <section
-      class="page-section"
-      id="contact"
-    >
+    <section class="page-section" id="contact">
+
       <div class="container contact-area">
 
         <div>
@@ -1127,19 +1367,10 @@
 
           <label>
             Project
-
-            <select
-              name="Project"
-              required
-            >
-              <option
-                value=""
-                selected
-                disabled
-              >
+            <select name="Project" required>
+              <option value="" selected disabled>
                 Select an option
               </option>
-
               <option>Screenplay</option>
               <option>Teleplay</option>
               <option>Treatment</option>
@@ -1149,19 +1380,10 @@
 
           <label>
             Stage of development
-
-            <select
-              name="Stage of development"
-              required
-            >
-              <option
-                value=""
-                selected
-                disabled
-              >
+            <select name="Stage of development" required>
+              <option value="" selected disabled>
                 Select an option
               </option>
-
               <option>Early development</option>
               <option>First draft</option>
               <option>Developed draft</option>
@@ -1170,19 +1392,10 @@
 
           <label>
             Service
-
-            <select
-              name="Service"
-              required
-            >
-              <option
-                value=""
-                selected
-                disabled
-              >
+            <select name="Service" required>
+              <option value="" selected disabled>
                 Select an option
               </option>
-
               <option>Drop-In Surgery</option>
               <option>Milestone Coaching</option>
               <option>Script Engineering</option>
@@ -1194,19 +1407,10 @@
 
           <label>
             Areas of development
-
-            <select
-              name="Areas of development"
-              required
-            >
-              <option
-                value=""
-                selected
-                disabled
-              >
+            <select name="Areas of development" required>
+              <option value="" selected disabled>
                 Select an option
               </option>
-
               <option>Plot</option>
               <option>Character</option>
               <option>Themes</option>
@@ -1217,23 +1421,18 @@
 
           <label class="contact-message">
             Message
-
             <textarea
               name="Message"
               maxlength="300"
               required
               placeholder="Tell me a little about your project..."
             ></textarea>
-
             <span class="character-note">
               Maximum 300 characters
             </span>
           </label>
 
-          <button
-            class="button"
-            type="submit"
-          >
+          <button class="button" type="submit">
             Send Message
           </button>
 
@@ -1242,21 +1441,17 @@
       </div>
     </section>
 
-    <!-- SECTION 5 — ABOUT -->
+    <!-- SECTION 6 — ABOUT -->
 
-    <section
-      class="page-section"
-      id="about"
-    >
+    <section class="page-section" id="about">
+
       <div class="container about-grid">
 
         <div class="about-image">
-
           <img
             src="assets/about-portrait.png"
             alt="Story Jerk story editor"
           >
-
         </div>
 
         <div class="about-copy">
@@ -1289,6 +1484,123 @@
     </section>
 
   </main>
+
+  <!-- TESTIMONIAL CAROUSEL JAVASCRIPT -->
+
+  <script>
+    (() => {
+      const carousel = document.querySelector('.testimonial-carousel');
+      const track = document.getElementById('testimonial-track');
+      const slides = [...track.querySelectorAll('.testimonial-slide')];
+      const dots = [...carousel.querySelectorAll('.testimonial-dot')];
+
+      const reducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      );
+
+      let index = 0;
+      let autoplay;
+
+      function showSlide(nextIndex) {
+        index = (nextIndex + slides.length) % slides.length;
+
+        track.style.transform =
+          `translateX(-${index * 100}%)`;
+
+        slides.forEach((slide, i) => {
+          slide.setAttribute(
+            'aria-hidden',
+            String(i !== index)
+          );
+          slide.inert = i !== index;
+        });
+
+        dots.forEach((dot, i) => {
+          dot.setAttribute(
+            'aria-current',
+            String(i === index)
+          );
+        });
+      }
+
+      function stopAutoplay() {
+        window.clearInterval(autoplay);
+        autoplay = undefined;
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+
+        if (
+          slides.length < 2 ||
+          reducedMotion.matches ||
+          document.hidden ||
+          carousel.matches(':hover') ||
+          carousel.matches(':focus-within')
+        ) {
+          return;
+        }
+
+        autoplay = window.setInterval(() => {
+          showSlide(index + 1);
+        }, 6500);
+      }
+
+      carousel
+        .querySelector('#testimonial-prev')
+        .addEventListener('click', () => {
+          showSlide(index - 1);
+          startAutoplay();
+        });
+
+      carousel
+        .querySelector('#testimonial-next')
+        .addEventListener('click', () => {
+          showSlide(index + 1);
+          startAutoplay();
+        });
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          showSlide(i);
+          startAutoplay();
+        });
+      });
+
+      carousel.addEventListener(
+        'mouseenter',
+        stopAutoplay
+      );
+
+      carousel.addEventListener(
+        'mouseleave',
+        startAutoplay
+      );
+
+      carousel.addEventListener(
+        'focusin',
+        stopAutoplay
+      );
+
+      carousel.addEventListener('focusout', () => {
+        window.requestAnimationFrame(startAutoplay);
+      });
+
+      document.addEventListener(
+        'visibilitychange',
+        startAutoplay
+      );
+
+      reducedMotion.addEventListener(
+        'change',
+        startAutoplay
+      );
+
+      showSlide(0);
+      startAutoplay();
+
+    })();
+  </script>
 
 </body>
 </html>

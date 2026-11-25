@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -382,11 +383,35 @@
       text-transform: uppercase;
     }
 
+    /* FIXED-HEIGHT SCROLLABLE QUOTES */
+
+    .testimonial-copy {
+      min-width: 0;
+    }
+
     .testimonial-quote {
+      height: 250px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding-right: 1rem;
       margin: 0;
       color: var(--white);
       font-size: clamp(1.05rem, 1.85vw, 1.4rem);
       line-height: 1.65;
+      scrollbar-width: thin;
+      scrollbar-color: var(--yellow) var(--black);
+    }
+
+    .testimonial-quote::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .testimonial-quote::-webkit-scrollbar-thumb {
+      background: var(--yellow);
+    }
+
+    .testimonial-quote::-webkit-scrollbar-track {
+      background: var(--black);
     }
 
     .testimonial-quote p {
@@ -396,6 +421,21 @@
     .testimonial-quote p:last-child {
       margin-bottom: 0;
     }
+
+    .testimonial-scroll-hint {
+      margin: 0.65rem 0 0;
+      color: var(--yellow);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .testimonial-scroll-hint[hidden] {
+      display: none;
+    }
+
+    /* CAROUSEL CONTROLS */
 
     .testimonial-controls {
       display: flex;
@@ -789,8 +829,10 @@
       }
 
       .testimonial-quote {
+        height: 180px;
         font-size: 0.95rem;
         line-height: 1.55;
+        text-align: left;
       }
 
       .testimonial-controls {
@@ -955,7 +997,7 @@
               <article
                 class="testimonial-slide"
                 aria-roledescription="slide"
-                aria-label="1 of 2"
+                aria-label="1 of 3"
               >
 
                 <img
@@ -977,7 +1019,7 @@
                     Screenwriter
                   </p>
 
-                  <blockquote class="testimonial-quote">
+                  <blockquote class="testimonial-quote" tabindex="0">
 
                     <p>
                       “Sam has a great combination of skills: he has a deep
@@ -1003,6 +1045,10 @@
 
                   </blockquote>
 
+                  <p class="testimonial-scroll-hint" hidden>
+                    Scroll to read more ↓
+                  </p>
+
                 </div>
               </article>
 
@@ -1011,7 +1057,7 @@
               <article
                 class="testimonial-slide"
                 aria-roledescription="slide"
-                aria-label="2 of 2"
+                aria-label="2 of 3"
               >
 
                 <img
@@ -1033,7 +1079,7 @@
                     Director
                   </p>
 
-                  <blockquote class="testimonial-quote">
+                  <blockquote class="testimonial-quote" tabindex="0">
                     “Sam wrote the film that started my career.
                     I owe him that and my greatest gratitude.
                     Without him, my directing career wouldn’t exist.
@@ -1042,6 +1088,79 @@
                     Sam is a writer, a raconteur, and a pain in the ass.
                     Hire him if you want the best.”
                   </blockquote>
+
+                  <p class="testimonial-scroll-hint" hidden>
+                    Scroll to read more ↓
+                  </p>
+
+                </div>
+              </article>
+
+              <!-- TESTIMONIAL 3 — TAMARA ORLOVA -->
+
+              <article
+                class="testimonial-slide"
+                aria-roledescription="slide"
+                aria-label="3 of 3"
+              >
+
+                <img
+                  class="testimonial-photo"
+                  src="assets/testimonial-TO.png"
+                  alt="Portrait of Tamara Orlova"
+                  loading="lazy"
+                  width="600"
+                  height="600"
+                >
+
+                <div class="testimonial-copy">
+
+                  <h3 class="testimonial-name">
+                    Tamara Orlova
+                  </h3>
+
+                  <p class="testimonial-role">
+                    Writer/Director
+                  </p>
+
+                  <blockquote class="testimonial-quote" tabindex="0">
+
+                    <p>
+                      “Working with Sam was a real pleasure. His feedback was
+                      incredibly thoughtful and thorough; always rooted in a
+                      genuine desire to understand my vision and intentions
+                      for the film.
+                    </p>
+
+                    <p>
+                      What I particularly appreciated was the way he challenged
+                      me to push the script further, asking the right questions
+                      and encouraging me to explore new possibilities, while
+                      always doing so with great respect for the material and
+                      for my voice as a writer. His notes never felt
+                      prescriptive; instead, they opened up new ways of
+                      thinking about the story and helped me see how to make
+                      the film stronger without losing sight of what I wanted
+                      it to be.
+                    </p>
+
+                    <p>
+                      I valued both his sensitivity to the creative process
+                      and his commitment to helping the script reach its full
+                      potential.
+                    </p>
+
+                    <p>
+                      I’d happily recommend Sam to any writer looking for a
+                      thoughtful, generous, and deeply engaged script editor.
+                      It was a pleasure working with him.”
+                    </p>
+
+                  </blockquote>
+
+                  <p class="testimonial-scroll-hint" hidden>
+                    Scroll to read more ↓
+                  </p>
 
                 </div>
               </article>
@@ -1078,7 +1197,12 @@
                 aria-current="false"
               ></button>
 
-
+              <button
+                class="testimonial-dot"
+                type="button"
+                aria-label="Show testimonial 3"
+                aria-current="false"
+              ></button>
 
             </div>
 
@@ -1477,6 +1601,7 @@
       const track = document.getElementById('testimonial-track');
       const slides = [...track.querySelectorAll('.testimonial-slide')];
       const dots = [...carousel.querySelectorAll('.testimonial-dot')];
+      const quotes = [...carousel.querySelectorAll('.testimonial-quote')];
 
       const reducedMotion = window.matchMedia(
         '(prefers-reduced-motion: reduce)'
@@ -1484,6 +1609,72 @@
 
       let index = 0;
       let autoplay;
+      let reading = false;
+
+      // Show the scroll hint only when more text is available.
+
+      function updateScrollHints() {
+        quotes.forEach((quote) => {
+          const hint = quote.nextElementSibling;
+
+          if (
+            !hint ||
+            !hint.classList.contains('testimonial-scroll-hint')
+          ) {
+            return;
+          }
+
+          const hasMore =
+            quote.scrollHeight > quote.clientHeight + 2;
+
+          const atBottom =
+            quote.scrollTop + quote.clientHeight >=
+            quote.scrollHeight - 2;
+
+          hint.hidden = !hasMore || atBottom;
+        });
+      }
+
+      function stopAutoplay() {
+        window.clearInterval(autoplay);
+        autoplay = undefined;
+      }
+
+      // Once someone interacts with a quote,
+      // automatic sliding stays paused until
+      // they manually select another testimonial.
+
+      function pauseForReading() {
+        reading = true;
+        stopAutoplay();
+      }
+
+      quotes.forEach((quote) => {
+        quote.addEventListener(
+          'pointerdown',
+          pauseForReading
+        );
+
+        quote.addEventListener(
+          'wheel',
+          pauseForReading,
+          { passive: true }
+        );
+
+        quote.addEventListener(
+          'scroll',
+          () => {
+            pauseForReading();
+            updateScrollHints();
+          },
+          { passive: true }
+        );
+
+        quote.addEventListener(
+          'keydown',
+          pauseForReading
+        );
+      });
 
       function showSlide(nextIndex) {
         index = (nextIndex + slides.length) % slides.length;
@@ -1496,6 +1687,7 @@
             'aria-hidden',
             String(i !== index)
           );
+
           slide.inert = i !== index;
         });
 
@@ -1505,11 +1697,8 @@
             String(i === index)
           );
         });
-      }
 
-      function stopAutoplay() {
-        window.clearInterval(autoplay);
-        autoplay = undefined;
+        updateScrollHints();
       }
 
       function startAutoplay() {
@@ -1517,6 +1706,7 @@
 
         if (
           slides.length < 2 ||
+          reading ||
           reducedMotion.matches ||
           document.hidden ||
           carousel.matches(':hover') ||
@@ -1530,26 +1720,37 @@
         }, 6500);
       }
 
+      // PREVIOUS BUTTON
+
       carousel
         .querySelector('#testimonial-prev')
         .addEventListener('click', () => {
+          reading = false;
           showSlide(index - 1);
           startAutoplay();
         });
 
+      // NEXT BUTTON
+
       carousel
         .querySelector('#testimonial-next')
         .addEventListener('click', () => {
+          reading = false;
           showSlide(index + 1);
           startAutoplay();
         });
 
+      // NAVIGATION DOTS
+
       dots.forEach((dot, i) => {
         dot.addEventListener('click', () => {
+          reading = false;
           showSlide(i);
           startAutoplay();
         });
       });
+
+      // PAUSE WHEN HOVERING
 
       carousel.addEventListener(
         'mouseenter',
@@ -1561,6 +1762,8 @@
         startAutoplay
       );
 
+      // PAUSE WHEN FOCUSED
+
       carousel.addEventListener(
         'focusin',
         stopAutoplay
@@ -1569,6 +1772,8 @@
       carousel.addEventListener('focusout', () => {
         window.requestAnimationFrame(startAutoplay);
       });
+
+      // PAUSE WHEN PAGE IS HIDDEN
 
       document.addEventListener(
         'visibilitychange',
@@ -1579,6 +1784,18 @@
         'change',
         startAutoplay
       );
+
+      window.addEventListener(
+        'resize',
+        updateScrollHints
+      );
+
+      window.addEventListener(
+        'load',
+        updateScrollHints
+      );
+
+      // INITIALISE
 
       showSlide(0);
       startAutoplay();
